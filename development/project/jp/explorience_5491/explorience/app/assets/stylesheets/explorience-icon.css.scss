@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "explorience-icon";
+  src:font-url("explorience-icon.eot");
+  src:font-url("explorience-icon.eot?#iefix") format("embedded-opentype"),
+    font-url("explorience-icon.woff") format("woff"),
+    font-url("explorience-icon.ttf") format("truetype"),
+    font-url("explorience-icon.svg#explorience-icon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "explorience-icon" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="eicon-"]:before,
+[class*=" eicon-"]:before {
+  font-family: "explorience-icon" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.eicon-back:before {
+  content: "a";
+}
+.eicon-badge:before {
+  content: "b";
+}
+.eicon-check:before {
+  content: "c";
+}
+.eicon-dir-down:before {
+  content: "d";
+}
+.eicon-dir-left:before {
+  content: "e";
+}
+.eicon-dir-right:before {
+  content: "f";
+}
+.eicon-dir-up:before {
+  content: "g";
+}
+.eicon-foot:before {
+  content: "h";
+}
+.eicon-heart:before {
+  content: "i";
+}
+.eicon-logout:before {
+  content: "j";
+}
+.eicon-minus:before {
+  content: "k";
+}
+.eicon-mypage:before {
+  content: "l";
+}
+.eicon-open-down:before {
+  content: "m";
+}
+.eicon-open-left:before {
+  content: "n";
+}
+.eicon-open-right:before {
+  content: "o";
+}
+.eicon-open-up:before {
+  content: "p";
+}
+.eicon-plus:before {
+  content: "q";
+}
+.eicon-tel:before {
+  content: "r";
+}
+.eicon-sort:before {
+  content: "s";
+}
+.eicon-cancel:before {
+  content: "t";
+}
+.eicon-menu:before {
+  content: "u";
+}

@@ -1,0 +1,14 @@
+div id="uploadedPhotoControlModal#{photo_id}" class="modal fade" aria-hidden="true"
+  .modal-dialog
+    .modal-header
+      a.close data-dismiss="modal"
+        i.eicon-cancel
+    .modal-body
+      .modal-body__title
+        = t 'views.shared._uploaded_photo_control.title'
+    .modal-footer
+      .delete_confirm.btn.btn-default data-photo_id="#{photo_id}"
+        = t 'views.shared._uploaded_photo_control.delete'
+      div
+        #uploadedPhotoControlBtn.btn.btn-default data-url="#{update_published_path}" data-photo_id="#{photo_id}" data-user_id="#{@user.id}"
+          = published_wording(photo_id)

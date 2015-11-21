@@ -1,0 +1,7 @@
+en:
+  views:
+    shared:
+      _report_completed_modal:
+        title: Reporting of violation image
+        completed: Reporting of violation image was completed.
+        close: Close

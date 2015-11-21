@@ -1,0 +1,7 @@
+ja:
+  helpers:
+    application_helper:
+      sorting_component:
+        by_evaluation: 評価の高い順
+        by_posted: 掲載日順
+        title: 並び替え

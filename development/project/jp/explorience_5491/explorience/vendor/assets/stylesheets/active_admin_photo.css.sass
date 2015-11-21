@@ -1,0 +1,32 @@
+@import "active_admin_variables"
+@import "compass/css3"
+
+.droppable-box
+  margin: 10px
+  height: 100px
+  background-color: $active_admin_droppable_box_bg_color
+  +border-radius(4px)
+  text-align: center
+  color: $active_admin_default_font_color
+  line-height: 125px
+  vertical-align: middle
+  position: relative
+  i
+    display: block
+    float: left
+    position: absolute
+    right: 50%
+    top: 30%
+    font-size: 25px
+
+.images-description,
+.images-preview-box
+  margin: 0px 10px
+
+.images-description
+  display: none
+
+.images-preview-box
+  img.uploaded-image
+    margin-right: 5px
+    height: 100px

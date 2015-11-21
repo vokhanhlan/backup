@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-md-3">
+        <a href="/posts/<%= entry_post.id %>">
+            <img class="img-responsive img-hover" src="http://placehold.it/200x200" alt="">
+        </a>
+    </div>
+    <div class="col-md-6">
+        <h3>
+            <a href="/posts/<%= entry_post.id %>"><%= entry_post.title.upcase %></a>
+        </h3>
+        <p><%= entry_post.created_at %></p>
+        <p>by <a href="#">Start Bootstrap</a>
+        </p>
+        <p><%= entry_post.description %></p>
+    </div>
+  </div>
+<br/>
+

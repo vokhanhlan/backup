@@ -1,0 +1,54 @@
+ <div class="container">
+      <%= render  partial: '/shared/flash/flash_messages', locals: {notice_type:"notice"} %>
+      <div class="row">
+          <div class="col-md-4 col-md-offset-4">
+              <div class="login-panel panel panel-default">
+                  <div class="panel-heading">
+                      <h3 class="panel-title"><b>PROFILE 'S <%= @user[:username].upcase %></b> </h3>
+                  </div>
+                  <div class="panel-body">
+                      <form role="form">
+                          <fieldset>
+                            <div class="form-group">
+                                     <% if @user[:avatar_path] %>
+                                      <div style="width: 150px; height:135px; border:solid">
+                                        <%= image_tag "/upload/"+@user[:avatar_path],:style => " width: 100%; height: 100%; object-fit: contain;" %>
+                                      </div>
+                                    <% else %>
+                                      <div style="width: 150px; height:135px; border:solid">
+                                       <%= image_tag "no_images.jpeg", :style => " width: 100%; height: 100%; object-fit: contain;" %>
+                                      </div>
+                                    <% end %>
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>&nbsp;<%= @user[:email]%>
+                            </div>
+                            <div class="form-group">
+                                <label>Name</label>&nbsp;<%= @user[:first_name] + @user[:last_name]%>
+                            </div>
+                            <div class="form-group">
+                                <label>Address</label>&nbsp;<%= @user[:address] %>
+                            </div>
+                            <div class="form-group">
+                                <label>Birthday</label>&nbsp;<%= @user[:birthday]%>
+                            </div>
+                            <div class="form-group">
+                                <label>Male</label>&nbsp;<%= @user[:gender]%>
+                            </div>
+                            <ul class="list-inline">
+                                <%if  current_user && current_user[:id] == @user[:id] %>
+                                <li><%= link_to 'Edit profile', '/edit_user_info/'+@user[:id].to_s, :class => 'btn btn-primary' %></li>
+                                <li class="pull-right"><%= link_to 'Change Pass', '/edit_user_pass/'+@user[:id].to_s, :class => 'btn btn-warning' %></li>
+                                <% end %>
+                            </ul>
+                             <ul class="list-inline">
+                              <li><%= link_to 'Back', root_url, :class => 'btn btn-default'  %></li>
+                              <li class="pull-right"><%= link_to 'List Post',"/posts?user_id="+@user[:id].to_s, :class => 'btn btn-success' %></li>
+                            </ul>
+                          </fieldset>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+</div>

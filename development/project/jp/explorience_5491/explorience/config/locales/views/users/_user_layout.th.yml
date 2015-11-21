@@ -1,0 +1,14 @@
+th:
+  views:
+    users:
+      _user_layout:
+        upload_photo: รูปภาพที่คุณได้โพสต์
+        follow: ปฏิบัติตาม
+        follower: ลูกศิษย์
+        score: คะแนน
+        tag:
+          title: แท็กแนะนำ
+        tabs:
+          experiences: การจัดอันดับ
+          badge: มันจะตรา
+          photos: 'ภาพถ่าย (%{count})'

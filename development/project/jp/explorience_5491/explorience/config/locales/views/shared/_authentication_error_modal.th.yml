@@ -1,0 +1,10 @@
+th:
+  views:
+    shared:
+      _authentication_error_modal:
+        failed: ผมรับรองความถูกต้องล้มเหลว
+        try_again: กดปุ่มเข้าสู่ระบบอีกครั้ง
+        connection_error: '%{provider} บัญชีและฉันล้มเหลวในการสมาคม'
+        btn:
+          facebook: มันจะเริ่มต้นด้วย Facebook
+          twitter: มันจะเริ่มต้นด้วย Twitter

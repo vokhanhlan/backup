@@ -1,0 +1,19 @@
+#topPage
+- if @tags.present? || @context_filter.present?
+  .search-tag--border-radius.filtering-tag-box
+    = render partial: "tags/tag_panel", locals: { tags: @tags, pref_tags: @all_prefecture_tags, genre_tags: @all_genre_tags }
+/ TODO: ver2.0リリースに向け、一時的に機能マスク
+/- if @tags.present? && @prefecture_tag_name
+  = render partial: "tags/prefecture_description", locals: { name: @prefecture_tag_name }
+#experienceContents
+  - if @experiences.empty? && @ad_experiences.empty?
+    .contents-none
+      = t 'views.top.show.no_contents'
+  = render partial: "experiences/experience", collection: @experiences, locals: { context_filter: nil }
+  = render partial: "experiences/experience", collection: @ad_experiences, locals: { context_filter: nil }
+#experiences.paginate
+  = paginate @experiences
+= render partial: "shared/error_modal", locals: { errors: flash[:errors] } if flash[:errors]
+/ TODO HACK: 未ログインユーザーでタグ検索した場合、ログインモーダル出さないようにする対処。要リファクタ
+- if @login_modal_disable
+  #loginModalDisable

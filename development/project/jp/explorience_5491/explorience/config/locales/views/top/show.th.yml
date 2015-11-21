@@ -1,0 +1,5 @@
+th:
+  views:
+    top:
+      show:
+        no_contents: ไม่มีประสบการณ์บังคับคือ

@@ -1,0 +1,10 @@
+div class="btn btn-default #{click_btn_go}" data-url="#{click_path}" data-experience_id="#{experience.id}" data-context='go'
+  - if click_btn_go == "btn-block__btn-go--checked"
+    .btn-check data-target="#cancelCheckGo#{experience.id}"
+      = image_tag 'check.png'
+  - else
+    .btn-heart
+      = image_tag 'heart.png'
+  = t 'views.clickings._button_go.go'
+  span
+    | &nbsp; (#{experience.click_count(:go)})

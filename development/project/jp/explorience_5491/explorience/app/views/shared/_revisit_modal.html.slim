@@ -1,0 +1,12 @@
+#revisitModal.modal.fade aria-hidden='true'
+  .modal-dialog
+    .modal-body
+      i.eicon-badge
+      p
+        = t 'views.shared._revisit_modal.explanation'
+      .modal-body__checkbox
+        input type="checkbox" name="cookie" checked="checked" id="revisitCookieValue"
+          = t 'views.shared._revisit_modal.display_check'
+    .modal-footer
+      .btn.btn-default data-dismiss="modal"
+        = t 'views.shared._revisit_modal.close_btn'

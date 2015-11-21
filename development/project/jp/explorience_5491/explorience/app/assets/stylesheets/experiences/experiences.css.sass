@@ -1,0 +1,146 @@
+// Place all the styles related to the experiences controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "shared/mixin"
+@import "shared/variables"
+
+.experience-show-wrap
+  width: 100%
+  border: solid 1px $box_border_color
+  border-radius: $border_radius
+  margin: 0 auto
+  margin-top: 20px
+  background-color: $box_bg_color
+  .upload-user-icon,.display-img-count,.invalid-image-report
+    position: absolute
+    margin: 10px
+  .upload-user-icon
+    width: 50px
+    height: 50px
+    img
+      border: solid 3px #ffffff
+      +border-radius(50%)
+  
+  .display-img-count
+    color: #ffffff
+    font-weight: bold
+    font-size: 30px
+    right: 0px
+  .invalid-image-report
+    font-size: 30px
+    font-weight: bold
+    color: #ffffff
+    right: 0px
+    bottom: -5px
+  .experience-show-wrap__content-main-block
+    padding: 12px
+    .title-block
+      h1
+        +inline-block
+        width: 75%
+        font-size: 14px
+        color: #666666
+      .icon-revisit
+        +inline-block
+        cursor: pointer
+        +pc_only
+          display: none
+        +phone_landscape
+          display: none
+        +phablet_and_tablet_landscape
+          display: none
+    .user-block
+      width: 100%
+      height: auto
+      margin: -7px 0 20px
+      .user-block__clicking-user
+        display: inline-block
+        img
+          width: 40px
+          height: 40px
+          +border-radius(50%)
+          margin: 0 7px 7px 0
+      .user-block__clicking-user--all
+        display: none
+      .count-block,.close-btn
+        display: inline-block
+        width: 40px
+        height: 40px
+        +border-radius(50%)
+        color: $box_bg_color
+        background-color: #c6c6c6
+        vertical-align: top
+      .count-block__user,.close-btn
+        line-height: 40px
+        text-align: center
+        font-weight: bold
+    .btn-block
+      .btn--go, .btn--went, .btn--revisit
+        width: 32%
+        height: auto
+        display: inline-block
+      .btn--click
+        width: 49%
+        height: auto
+        display: inline-block
+      .btn-block__go
+        margin-right: $btn_margin
+      .btn-block__revisit
+        display: inline-block
+        margin-left: $btn_margin
+      .revisit-count
+        font-size: 20px
+        font-weight: bold
+        margin-bottom: 3px
+        color: #a5a5a5
+      .revisit-content
+        color: #a5a5a5
+        .revisit-content__badge
+          display: inline-block
+          font-size: 14px
+        .revisit-content__wording
+          display: inline-block
+          vertical-align: top
+    .detail-block
+      padding: 12px 0
+      .detail-block__description
+        margin: 20px 0
+      .detail-block__url
+        margin-bottom: 20px
+        a
+          color: #666666
+          text-align: none
+          cursor: pointer
+    .tag-block
+      width: 100%
+      height: auto
+      padding: 5px
+    #uploadModalBlock
+      width: 160px
+      height: auto
+      padding: 10px
+      border: solid 1px
+      +border-radius(8px)
+      margin: 10px 0 20px
+      text-align: center
+      cursor: pointer
+    .upload-photo-block
+      margin-bottom: 20px
+      width: 100%
+      height: auto
+      overflow-x: scroll
+      overflow-y: hidden
+      white-space: nowrap
+      +inline-block
+      img
+        width: 100px
+        +phone
+          width: 80px
+        height: auto
+        margin-right: 10px
+    .uploaded-img
+      display: inline-block
+    .invalid-image-report
+      color: #f06cb6
+

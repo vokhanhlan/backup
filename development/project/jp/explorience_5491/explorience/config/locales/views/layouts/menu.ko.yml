@@ -1,0 +1,18 @@
+ko:
+  views:
+    layouts:
+      menu:
+        previous_page: 백
+        mypage: 내 페이지
+        relation:
+          experience: 환경 관련 태그
+        language: 언어 전환
+        account: 계정
+        logout: 로그 아웃
+        login: 로그인
+        tag:
+          popular: 인기있는
+          place: 위치 이름
+        privacy_policy: 개인 정보 보호 정책
+        guide: 안내서
+        setting: 환경

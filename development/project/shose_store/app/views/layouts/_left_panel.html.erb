@@ -1,0 +1,11 @@
+<div id="sidebar">
+<div>
+	<div class ="title">CATEGORIES</div>
+		<ul class="categories">
+		<li><a href=<%= loai_san_phams_path%>>Tat ca san pham </a></li>
+		<% @loai_san_phams.each do |cat|%>
+			<li><a href=<%= loai_san_pham_path(cat) %>><%= cat.ten %> </a></li>
+	    <% end%>
+		</ul>															
+	</div>
+</div>

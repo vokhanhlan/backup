@@ -1,0 +1,5 @@
+th:
+  views:
+    score_logs:
+      index:
+        title: ประวัติศาสตร์คะแนน

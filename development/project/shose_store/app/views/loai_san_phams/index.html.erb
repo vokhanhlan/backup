@@ -1,0 +1,14 @@
+ <% @san_phams.each do |sanpham| %>
+<div class="imagebook">
+<div class="imagesize"><%= image_tag sanpham.hinh.url(:medium) %></div>  
+<div class="imagesbottom" >
+<div><%= sanpham.ten %></div>
+<div><%= link_to 'Chi tiet', sanpham %></div>
+</div>
+</div>    
+<% end %>
+<!-- Pagging -->
+<div class="digg_pagination">
+  <%= will_paginate @san_phams, :container => false %>
+</div>
+<!-- End Pagging --> 

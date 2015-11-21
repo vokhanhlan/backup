@@ -1,0 +1,141 @@
+<script type="text/javascript">
+ jQuery(function(){
+  $("#comment").click(function(){
+    $(".error").hide();
+    var hasError = false;
+    var content = $("#commentBodyField").val();
+    var user_id = $("#user_id").val();
+    
+    if (content == '') {
+      $("#commentBodyField").after('<span class="error">Please enter a content.</span>');
+      hasError = true;
+    }else if (user_id == 0) {
+      $("#commentBodyField").after('<span class="error">Please login use comment.</span>');
+      hasError = true;
+    }
+
+    if(hasError == true) {return false;}
+  });
+});
+</script>
+<script type="text/javascript">
+  var hidden = 1;
+  function update_comment(){
+    if(hidden ==1){
+      document.getElementById('comment_f').style.display = 'block'
+      document.getElementById('comment_update').focus()
+      hidden =2;
+    }else{
+      document.getElementById('comment_f').style.display = 'none'
+      hidden =1;
+    }
+    return hidden
+  };
+</script>
+<%- model_class = Post -%>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="thumbnail">
+      <a href="#"><%= image_tag @post.image.url(:medium) %></a>
+      <div class="caption">
+        <h3><a href="#"><%= @post.title %></h3></a>
+        <h6 class="media-heading date"><%= date_format(@post.created_at) %> | Author: <a href="#"><%= @post.user.username %></a></h6>
+        <p class="text-justify"><%= @post.description%></p>
+        <p class="text-justify"><%= raw(@post.content)%></p>
+        <div id="allHolder">
+          <form action=<%= comments_path%> method="post">
+            <div id ="commentsHolder">
+              <textarea id ="commentBodyField" rows="3" name="comment[content]" placeholder="Enter your comment..."></textarea>
+            </div>
+            <div class="postCommentButtonHolder">
+              <input hidden name="comment[post_id]" value=<%=@post.id%>></input>
+              <% if current_user%>
+              <input hidden id="user_id" name="comment[user_id]" value=<%=current_user.id%>></input>
+              <%else%>
+              <input hidden id="user_id"  name="comment[user_id]" value="0"></input>
+              <%end%>
+              <button type="submit" id="comment" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+        </div>
+        <div class="detailBox">
+          <div class="titleBox">
+            <label>All Comment</label>
+          </div>
+          <div class="commentBox">
+          </div>
+          <div class="actionBox">
+            <ul class="commentList">
+              <% @comments.each do |comment|%>
+              <li>
+                <div class="commenterImage">
+                 <%= image_tag comment.user.avatar.url(:medium) %>
+               </div>
+               <div class="commentText">
+                <cite class="user"><%= comment.user.username%>
+                  <span class="date sub-text"><%= date_format(comment.created_at)%></span>
+                </cite>
+                <p class=""><%= comment.content%></p>
+                <%if current_user && current_user.id == comment.user_id%>
+                <span id = "<%= "cm_"<< comment.id.to_s %>" style="cursor:pointer">Edit</span>
+                <%= link_to "Delete", comment_path(comment), method: :delete, data: { confirm: "Are you sure?" } %>
+                <div name="<%= "cm_"<< comment.id.to_s %>" style="display:none">
+                Edit
+                <form action=<%= update_comment_post_path%> method="post">
+                    <div id ="commentsHolder">
+                      <textarea id ="comment_update" rows="3" name="comment[content]">
+                        <%= comment.content%>
+                      </textarea>
+                      <input hidden name="comment[post_id]" value=<%=@post.id%>></input>
+                      <input hidden name="comment[id]" value=<%=comment.id%>></input>
+                    </div>
+                    <div class="postCommentButtonHolder">
+                      <button type="submit" id="comment" class="btn btn-primary">Save</button>
+                    </div>
+                  </form>
+                </div>
+                <%end%>
+              </div>
+            </li>
+            <%end%>
+          </ul>
+        </div>
+      </div>
+      <p>
+        <% if current_user &&  current_user.id == @post.user_id%>
+        <%= link_to 'Edit', edit_post_path(@post),:class => 'btn btn-default btn-xs' %>
+        <%= link_to "Back", posts_path,:class => 'btn btn-xs btn-danger' %>
+        <%else%>
+        <%= link_to "Back", homes_path,:class => 'btn btn-xs btn-danger' %>
+        <%end%>
+      </p>
+    </div>
+  </div>
+</div>
+</div>
+
+<div id="pick_1">moo1</div>
+<div id="pick_2">moo2</div>
+<div id="pick_3">moo3</div>
+
+<script>
+var hidden = 1;
+$('[id^=cm_]').click(
+    function(event) {
+    var a = event.target.id;
+    alert(a);
+    //alert(document.getElementsByName(a).val());
+    if(hidden ==1){
+      document.getElementsByName(a).style.display = 'block'
+      document.getElementById('comment_update').focus()
+      hidden =2;
+    }else{
+      document.getElementsByName(a).style.display = 'none'
+      hidden =1;
+    }
+    return hidden
+        // Do something with the id # here: 
+        //alert('Picked: '+ event.target.id.slice(5));
+    }
+);
+</script>

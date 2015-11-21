@@ -1,0 +1,5 @@
+th:
+  controllers:
+    invalid_images_controller:
+      report:
+        failed_to_create: มันล้มเหลวที่จะรายงานภาพการละเมิด โปรดลองอีกครั้ง

@@ -1,0 +1,14 @@
+.modal-footer
+  = link_to user_omniauth_authorize_path(:facebook), class: 'btn btn-default facebook' do
+    i.fa.fa-facebook
+    .modal-footer__btn-msg-fb
+      = t 'views.shared._login_modal.btn.facebook'
+  = link_to user_omniauth_authorize_path(:twitter), class: 'btn btn-default twitter' do
+    i.fa.fa-twitter
+    .modal-footer__btn-msg-tw
+      = t 'views.shared._login_modal.btn.twitter'
+  / TODO: デザインが確定次第反映する
+  = link_to user_omniauth_authorize_path(:google), class: 'btn btn-default google' do
+    i.fa.fa-google-plus
+    .modal-footer__btn-msg-google
+      = t 'views.shared._login_modal.btn.google'

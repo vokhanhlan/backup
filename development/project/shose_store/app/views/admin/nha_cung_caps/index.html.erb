@@ -1,0 +1,31 @@
+<h1>Listing nha_cung_caps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ten</th>
+      <th>Dia chi</th>
+      <th>Email</th>
+      <th>So dien thoai</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @nha_cung_caps.each do |nha_cung_cap| %>
+      <tr>
+        <td><%= nha_cung_cap.ten %></td>
+        <td><%= nha_cung_cap.dia_chi %></td>
+        <td><%= nha_cung_cap.email %></td>
+        <td><%= nha_cung_cap.so_dien_thoai %></td>
+        <td><%= link_to 'Show', admin_nha_cung_cap_path(nha_cung_cap) %></td>
+        <td><%= link_to 'Edit', edit_admin_nha_cung_cap_path(nha_cung_cap) %></td>
+        <td><%= link_to 'Destroy', admin_nha_cung_cap_path(nha_cung_cap), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Nha cung cap', new_admin_nha_cung_cap_path %>

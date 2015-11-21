@@ -1,0 +1,24 @@
+ko:
+  views:
+    shared:
+      _report_modal:
+        title: 위반 사진을보고
+        guidance: 이 이미지를 통보합니다. 위반 사유를 선택 신고 버튼을 누르십시오.
+        form:
+          email: 이메일 주소 (필수)
+          email_guidance: 이메일 주소를 입력하십시오
+          invalid_type: 위반 내용 (필수)
+          reason: 위반 이유 (선택 사항)
+        select_box_items:
+          -
+            - 저작권 침해
+            - 0
+          -
+            - 공서 양속에 반하는
+            - 1
+          -
+            - 기타
+            - 2
+        btn:
+          confirm: 이 이미지 신고 하시겠습니까?
+          submit: 통보

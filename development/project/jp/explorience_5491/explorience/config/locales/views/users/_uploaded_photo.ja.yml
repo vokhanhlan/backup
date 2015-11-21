@@ -1,0 +1,9 @@
+ja:
+  views:
+    users:
+      _uploaded_photo:
+        unpublished: 
+          title: 非掲載
+          description:
+            - この画像は非掲載中です。
+            - 掲載する場合は、画像をタップして掲載ボタンをクリックして下さい。

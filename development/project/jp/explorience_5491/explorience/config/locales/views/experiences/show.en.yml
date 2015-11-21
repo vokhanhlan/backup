@@ -1,0 +1,12 @@
+en:
+  views:
+    experiences:
+      show:
+        btn:
+          revisit: Going again
+          show_part: Close
+          upload_image: Upload Photo
+        uploaded_photo: Posted photos
+        affiliate:
+          link_btn: "Go to '%{advertiser_name}'"
+        show_more: Show More

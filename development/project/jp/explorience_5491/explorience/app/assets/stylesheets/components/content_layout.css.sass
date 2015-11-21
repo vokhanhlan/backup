@@ -1,0 +1,374 @@
+@import "shared/variables"
+@import "shared/mixin"
+
+// 共通部品
+// TODO: 各stylesheetで共通部品切り出しを行い、共通部品化
+
+// タグ検索時のタグを囲むボックス
+.search-tag--border-radius
+  border: solid 1px $box_border_color
+  border-radius: $border_radius
+  background-color: $box_bg_color
+  margin: 10px auto
+  padding: 10px 10px 20px 10px
+
+// 検索タグ
+.tag
+  display: inline-block
+  margin-bottom: 10px
+  a
+    border: none
+  .tag-content
+    width: auto
+    height: 30px
+    margin-right: 13px
+    +inline-block
+    border: solid 1px $box_border_color
+    +border-radius($border_radius)
+    .tag-box
+      width: auto
+      height: 30px
+      line-height: 30px
+      +inline-block
+      text-align: center
+      padding: 0px 10px
+      color: $box_border_color
+    a > i
+      margin-left: 2px
+      margin-right: 10px
+      &:before
+        vertical-align: middle
+  .tag-content__selected, a .tag-content__selected
+    background: #fb6fa4
+    border: solid 1px #fa649d
+    .tag-box
+      color: #efefef
+    i
+      color: #efefef
+
+// 都道府県でのタグ検索した時のボックス
+.search-pref-block
+  border: solid 1px #cccccc
+  border-radius: 4px
+  background-color: white
+  margin: 10px auto
+  .search-pref-block__name
+    margin: 20px
+    width: 120px
+    font-size: 28px
+    display: inline-block
+  .search-pref-block__text
+    width: 55%
+    vertical-align: top
+    text-align: left
+    margin: 10px 0
+    display: inline-block
+
+// ページネーションを透明化
+// オートページャーにしたことで、ページングのリンクが不要になったため
+.paginate
+  display: none
+
+// ボタン
+.btn.btn-default.disabled
+  background-color: $btn_disabled_bg_color
+
+.btn--affiliate_b
+  width: 100%
+
+//コンテンツ画像の矢印部分
+%img_triangle
+  width: 50%
+  height: 0
+  border-bottom: 10px solid $box_bg_color
+
+.img-triangle
+  position: relative
+  bottom: 9px
+  .img-triangle__block-position:nth-of-type(1)
+    @extend %img_triangle
+    float: left
+    border-right: 10px solid transparent
+  .img-triangle__block-position:nth-of-type(2)
+    @extend %img_triangle
+    float: right
+    border-left: 10px solid transparent
+
+// コンテンツ内の「行った」「行きたい」ボタンスタイル
+%btn_style
+  width: 100%
+  border-radius: $border_radius
+  padding: 10px
+  text-align: center
+  font-size: 12px
+  &:hover
+    border-color: $btn_selected_color
+
+.btn-block
+  margin-bottom: 30px
+  margin-top: 20px
+  span
+    color: #a5a5a5
+  .btn-block__btn-go,.btn-block__btn-went
+    @extend %btn_style
+    border: solid 1px #e0e0e0
+  .btn-foot,.btn-heart, .btn-check
+    margin-bottom: 5px
+  .btn-block__btn-go--checked,.btn-block__btn-went--checked
+    @extend %btn_style
+    background-color: $btn_selected_color
+    border-color: $btn_selected_color
+  .btn-block__revisit--checked
+    @extend %btn_style
+    background-color: $btn_selected_color
+    border-color: $btn_selected_color
+    color: #666666
+
+// 体験コンテンツの画像表示制御
+.experience-photo-block
+  width: 100%
+  position: relative
+  img
+    width: 100%
+    height: auto
+    // IE11では問題ないが保険として
+    -ms-interpolation-mode: bicubic
+.experience-title-block
+  width: 100%
+  height: 30px
+  position: relative
+  bottom: 30px
+  background-color: rgba(0,0,0,0.5)
+  div
+    color: $box_bg_color
+    line-height: 30px
+    padding: 0 15px
+    font-size: 14px
+
+
+// 体験コンテンツ、マイページの注目のタグの半透明表示
+.unselected
+  +opacity(0.3)
+
+.user-wrap
+  .user-info
+    position: relative
+    width: 100%
+    margin-bottom: 30px
+    color: $user_info_font_color
+    .user-info__contents
+      position: absolute
+      background-color: rgba(0,0,0,0)
+      width: 100%
+      z-index: 1
+      margin-bottom: 30px
+      .sns-link-block
+        width: auto
+        height: auto
+        text-align: right
+        a
+          color: $user_info_font_color
+      .user-block
+        width: auto
+        height: auto
+        margin: 35px 0
+        .user-block__photo
+          text-align: center
+          img
+            width: 105px
+            height: 105px
+            +border-radius(50%)
+            border: 5px solid #a0a0a0
+        .user-name-sns-block
+          width: auto
+          margin: 0 auto
+          text-align: center
+          .user-name-sns-block__name
+            font-size: 20px
+            +inline-block
+          .user-name-sns-block__sns
+            +inline-block
+            margin-left: 10px
+      .user-btn-block
+        .follow-block,.follower-block,.score-block
+          width: 33%
+          height: auto
+          +inline-block
+          text-align: center
+          color: $box_bg_color
+          font-weight: bold
+          text-decoration: none
+        .follow-block__count, .follower-count, .score-block__count
+          font-size: 15px
+        .follow-block__title, .follower-block__title, .score-block__title
+          font-size: 11px
+        .score-block
+          width: 34%
+        .follower-block__unread, .score-block__unread
+          width: 15px
+          height: 15px
+          line-height: 15px
+          background-color: $active_color
+          +border-radius(50%)
+          +inline-block
+          margin-left: 5px
+        .score-block__unread
+          vertical-align: bottom
+    .user-info__background
+      overflow: hidden
+      width: 100%
+      height: 250px
+      border-bottom: solid 1px $common_background_color
+      background-color: #000000
+      img
+        width: 120%
+        height: auto
+        overflow: hidden
+        margin-left: -10%
+        +pc_only
+          margin-top: -400px
+        // TODO: ブラー効果の実装が見え次第変更
+        // とりあえずは明度を下げることでレナさんと合意（2015/4/27）
+        +opacity(0.5)
+  .follow-btn-block
+    margin-bottom: 30px
+    .follow-block__btn
+      text-align: center
+      .btn-default
+        width: 148px
+        height: 40px
+        line-height: 25px
+        margin: 0 auto
+        +border-radius(8px)
+  .tabbable
+    .nav-tabs
+      li
+        width: 30%
+        &:first-child
+          margin-left: 5%
+        &:last-child
+          margin-right: 5%
+        a
+          text-align: center
+    .tab-pane
+      background-color: #ffffff
+    #experienceContents ,.experience-contents
+      margin-top: 0
+  .btn-block
+    padding: 20px 1% 10px
+    margin: 0
+    form
+      display: inline-block
+      width: 32%
+      &:nth-of-type(2)
+        margin-left: $btn_margin
+      &:nth-of-type(3)
+        margin-left: $btn_margin
+    .btn-block__count
+      text-align: center
+      font-size: 24px
+      font-weight: bold
+    .btn-block__title
+      text-align: center
+      color: #a5a5a5
+    .eicon-heart, .eicon-foot, .eicon-badge
+      margin-right: 3px
+      vertical-align: middle
+    .btn
+      border: none
+      +border-radius(0)
+      padding-bottom: 0
+      .btn-block__title
+        color: #ffffff
+    .btn-go, .btn-went, .btn-revisit
+      width: 100%
+      font-size: 12px
+      background-color: $active_color
+      padding-top: 20px
+      color: #ffffff
+      &:hover
+        background-color: lighten($active_color, 10%)
+      &:after
+        width: 0
+        height: 0
+        border: 12px solid transparent
+        border-bottom: 12px solid #ffffff
+        content: ""
+        position: relative
+        bottom: 9px
+    .btn_unchecked_color
+      background-color: #f5f5f5
+      color: #666666
+      &:after
+        +opacity(0)
+      .btn-block__title
+        color: #666666
+    .tag-block
+      width: 100%
+      padding: 15px 5px 15px 15px
+      .tag-block__title
+        font-size: 11px
+        color: #a5a5a5
+        margin-bottom: 5px
+  .experience-list-title
+    text-align: center
+    font-size: 11px
+    margin-bottom: -40px
+    +phone_portrait
+      margin-bottom: -60px
+    +phone_landscape
+      text-align: left
+      margin-left: 15px
+      margin-bottom: -5px
+  .uploaded-photo
+    width: 100%
+    height: auto
+    margin-top: 10px
+    border-top: solid 1px #000000
+    border-bottom: solid 1px #000000
+    img
+      width: 100%
+      height: auto
+  .uploaded-photo__experience-title
+    width: 80%
+    +inline-block
+    padding: 10px
+  .uploaded-photo__fixed-count
+    width: 20%
+    +inline-block
+    text-align: right
+    padding: 10px
+
+
+// チェックした体験のレイアウト
+// マイページは「行った」「再訪」
+// ユーザーは「行きたい」「行った」「再訪」部分
+.checked-experience
+  width: 100%
+  .checked-experience__img
+    img
+      width: 100%
+      height: auto
+      margin-bottom: -30px
+  .checked-experience__img-rank-and-title-block
+    width: 100%
+    height: 30px
+    position: relative
+    bottom: 0px
+    background-color: rgba(0,0,0,0.5)
+    div
+      line-height: 30px
+      font-size: 14px
+      a
+        color: $box_bg_color
+        text-decoration: none
+      .checked-experience__rank, .checked-experience__title
+        +inline-block
+      .checked-experience__rank
+        width: 30px
+        height: 28px
+        background-color: rgba(0, 0, 0, 0.75)
+        text-align: center
+      .checked-experience__title
+        padding-left: 10px
+

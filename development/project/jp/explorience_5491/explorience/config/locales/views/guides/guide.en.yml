@@ -1,0 +1,14 @@
+en:
+  views:
+    guides:
+      caption:
+        title: Help Center
+        inquiry_link: here
+        content_html: "This is a FAQ. More detailed information you want about the Explorience, if support is required, please contact us %{link}."
+      question:
+        title: FAQ
+      terms_and_policy:
+        title: "Terms & Policies"
+        terms: Terms of Use
+        copyright: Copyright Terms
+        privacy_policy: Privacy Policy

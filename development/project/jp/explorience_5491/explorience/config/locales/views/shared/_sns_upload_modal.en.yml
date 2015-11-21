@@ -1,0 +1,6 @@
+en:
+  views:
+    shared:
+      _sns_upload_modal:
+        explanation: Do you want to share the image on Twitter?
+        upload_btn: Twitter share

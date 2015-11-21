@@ -1,0 +1,5 @@
+ko:
+  views:
+    score_logs:
+      index:
+        title: 점수 기록

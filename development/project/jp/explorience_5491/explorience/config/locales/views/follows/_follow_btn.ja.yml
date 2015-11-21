@@ -1,0 +1,7 @@
+ja:
+  views:
+    follows:
+      _follow_btn:
+        followed: フォロー中
+        follow: フォローする
+        

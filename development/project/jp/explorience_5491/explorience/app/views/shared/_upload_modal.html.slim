@@ -1,0 +1,14 @@
+div id="uploadModal_#{experience.id}" class="modal fade" aria-hidden="true"
+  .modal-dialog
+    .modal-header
+      a.close data-dismiss="modal"
+        i.eicon-cancel
+    .modal-body
+      .modal-body__title
+        = t "views.shared._upload_modal.photo_upload_message"
+    .modal-footer
+        = form_for Photo.new, html: {multipart: true} do |f|
+          = f.hidden_field :experience_id, value: experience.id
+          .modal-footer__img-field
+            = f.file_field :img
+          = f.submit t("views.shared._upload_modal.submit"), class: 'btn btn-default'

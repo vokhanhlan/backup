@@ -1,0 +1,46 @@
+
+  <div class="table">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <thead>
+    <tr>
+      <th>Check all</th>
+      <th>Ma loai san pham</th>
+      <th>Ma nha cung cap</th>
+      <th>Ten</th>
+      <th>Don gia</th>
+      <th>Mo ta</th>
+      <th>San pham moi</th>
+      <th>Trang thai</th>
+      <th>Ngay san xuat</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @san_phams.each do |san_pham| %>
+      <tr>
+      <td><input type="checkbox" class="checkbox" /></td>
+        <td><%= san_pham.ma_loai_san_pham %></td>
+        <td><%= san_pham.ma_nha_cung_cap %></td>
+        <td><%= san_pham.ten %></td>
+        <td><%= san_pham.don_gia %></td>
+        <td><%= san_pham.mo_ta %></td>
+        <td><%= san_pham.san_pham_moi %></td>
+        <td><%= san_pham.trang_thai %></td>
+        <td><%= san_pham.ngay_san_xuat %></td>
+        <td><%= link_to 'Show', admin_san_pham_path(san_pham) %></td>
+        <td><%= link_to 'Edit', edit_admin_san_pham_path(san_pham) %></td>
+        <td><%= link_to 'Destroy' , admin_san_pham_path(san_pham) , method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    </tbody>
+    </table>
+   
+            <!-- Pagging -->
+            <div class="digg_pagination">
+            <div class="page_info">
+              <%= page_entries_info @san_phams %>
+            </div>
+              <%= will_paginate @san_phams, :container => false %>
+            </div>
+            <!-- End Pagging -->      
+          </div>

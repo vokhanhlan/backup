@@ -1,0 +1,5 @@
+.score-logs__content__body
+  - unless score_log.read
+    .log-unread
+  .log-message
+    = score_log.message

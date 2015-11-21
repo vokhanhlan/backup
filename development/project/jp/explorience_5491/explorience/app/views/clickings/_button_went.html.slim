@@ -1,0 +1,10 @@
+div class="btn btn-default #{click_btn_went}" data-url="#{click_path}" data-experience_id="#{experience.id}" data-context='went'
+  - if click_btn_went == "btn-block__btn-went--checked"
+    .btn-check data-target="#cancelCheckWent#{experience.id}"
+      = image_tag 'check.png'
+  - else
+    .btn-foot
+      = image_tag 'footmark.png'
+  = t 'views.clickings._button_went.went'
+  span
+    | &nbsp; (#{experience.click_count(:went)})

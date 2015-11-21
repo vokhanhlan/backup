@@ -1,0 +1,10 @@
+en:
+  views:
+    shared:
+      _authentication_error_modal:
+        failed: Failed to Authenticate.
+        try_again: Please login again.
+        connection_error: 'Failed to associate with your %{provider} account.'
+        btn:
+          facebook: Log in with Facebook
+          twitter: Log in with Twitter

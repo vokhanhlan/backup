@@ -1,0 +1,11 @@
+#snsUploadModal.modal.fade aria-hidden='true'
+  .modal-dialog
+    .modal-header
+      a.close data-dismiss="modal"
+        i.eicon-cancel
+    .modal-body
+      .modal-body__title
+        = t 'views.shared._sns_upload_modal.explanation'
+    .modal-footer
+      = button_to twitter_path, params: { id: experience.id, photo_id: photo_id }, class: 'btn btn-default' do
+        = t 'views.shared._sns_upload_modal.upload_btn'

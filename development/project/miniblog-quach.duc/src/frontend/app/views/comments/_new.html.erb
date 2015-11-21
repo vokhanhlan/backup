@@ -1,0 +1,27 @@
+<!-- TODO: config grid view -->
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+        <span aria-hidden="true">×</span>
+      </button>
+      <h4 class="modal-title" id="myModalLabel">Edit comment</h4>
+    </div>
+    <div class="modal-body" id="modal_body">
+        <!-- Form for create new post, edit old post -->
+        <%= form_for @comment, :html => { :multipart => true }, :remote => true do |f| %>
+          <div id="notice">
+            <%= render  partial: '/shared/flash/flash_messages', locals: {notice_type:"alert"} %>
+          </div>
+          <form role="form">
+              <div class="form-group">
+                  <%= f.text_area :content, class: "form-control", :required => true%>
+                  <br/>
+                  <%= f.submit 'Edit Comment', :class => 'btn btn-success pull-right', :disable_with => "Edit..."%>
+                  <br/>
+              </div>
+          </form>
+        <% end %>
+    </div>
+  </div>
+</div>

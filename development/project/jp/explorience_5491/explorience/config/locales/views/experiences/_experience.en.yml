@@ -1,0 +1,12 @@
+en:
+  views:
+    experiences:
+      _experience:
+        contents:
+          tel: "Phone:"
+          address: "Location:"
+          tag:
+            show_all: Show all
+            show_part: Close
+        relation:
+          title: Relation Experience

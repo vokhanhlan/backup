@@ -1,0 +1,13 @@
+en:
+  models:
+    score_log:
+      # TODO HACK: 下記文言は暫定。正式文言確定次第改修する。
+      click_been_there: Click bonus (Been there) had been added.
+      click_wish_to_go: Click bonus (Wish to go) had been added.
+      activated_exp_by_click: Experience activation bonus (click) had been added.
+      activated_exp_by_modifying: Experience activation bonus (modification) had been added.
+      followed: Follower bonus had been added.
+      following: Follow bobus had been added.
+      login: Continuous login bonus had been added.
+      pinned_photo: Pinned photo bonus had been added.
+      upload_photo: Uploading photo bonus had been added.

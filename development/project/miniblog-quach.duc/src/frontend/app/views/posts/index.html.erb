@@ -1,0 +1,25 @@
+<!-- View to show all posts in database -->
+<!-- Page Content -->
+<div class="container" id="post_table">
+  <div class="row">
+    <div class="col-lg-12">
+      <h2 class="page-header">List All Post</h2>
+      <ol class="breadcrumb">
+        <li><a href="/">Home</a>
+        </li>
+        <li class="active"><a href="/">List All Post</a></li>
+      </ol>
+    </div>
+  </div>
+  <br/>
+  <div class="row">
+    <div class="col-md-12">
+      <%= render  partial: 'shared/posts/list_posts', locals:  {posts:@posts} %>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <div class="text-center">
+      <%= paginate @posts unless params[:search_key] %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+tr
+  td.user-icon
+    - path = following_follower == current_user ? mypage_path : user_path(following_follower.id)
+    = link_to image_tag(following_follower.providers.first.photo_url), path
+  td.user-name
+    - if current_user == display_user
+      - unread_follower = Follow.where(user_id: following_follower.id, following_id: current_user.id, read: false)
+      - if unread_follower.present?
+        .user-name__unread
+    .user-name__content
+      = following_follower.name
+  td.follow-btn id="followBtn#{following_follower.id}"
+    - if user_signed_in?
+      - unless following_follower == current_user
+        = render partial: "follows/follow_btn", locals: { following_id: following_follower.id, follow_btn_class: follow_btn_class(following_follower) }

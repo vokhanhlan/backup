@@ -1,0 +1,6 @@
+th:
+  views:
+    follows:
+      following_list:
+        none_list: ไม่มีผู้ใช้ที่มีการปฏิบัติตาม
+

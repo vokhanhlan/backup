@@ -1,0 +1,13 @@
+.modal.fade id="cancelCheckWent#{experience.id}" aria-hidden="true"
+  .modal-dialog
+    .modal-header
+      a.close data-dismiss="modal"
+        i.eicon-cancel
+    .modal-body
+      .modal-body__title
+        = t 'views.shared._check_went_modal.title'
+      p.modal-body__contents
+        = t 'views.shared._check_went_modal.cancel_confirmation'
+    .modal-footer
+      div class="btn btn-default btn--cancel" data-url="#{click_cancel_path}" data-experience_id="#{experience.id}" data-context='went'
+        = t 'views.shared._check_went_modal.cancel_btn'

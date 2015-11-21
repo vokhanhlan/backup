@@ -1,0 +1,14 @@
+ja:
+  views:
+    guides:
+      caption:
+        title: ヘルプセンター
+        inquiry_link: こちら
+        content_html: 'よくある質問です。Explorienceに関するより詳細な情報がほしい、サポートが必要な場合は、%{link}からお問い合わせください。'
+      question:
+        title: よくある質問
+      terms_and_policy:
+        title: 規約＆ポリシー
+        terms: サービス利用規約
+        copyright: 著作権規約
+        privacy_policy: プライバシーポリシー

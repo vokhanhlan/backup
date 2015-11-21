@@ -1,0 +1,23 @@
+ja:
+  views:
+    users:
+      _user_layout:
+        upload_photo: 投稿している写真
+        follow: フォロー
+        follower: フォロワー
+        score: スコア
+        tag:
+          title: 注目のタグ
+        tabs:
+          experiences: ランキング
+          badge: 獲得バッジ
+          photos: フォト (%{count})
+      signup:
+        title: 新規登録
+        email: メールアドレス
+        name: 氏名
+        submit: 登録する
+        limit: 最小文字
+        password: パスワード
+        password_confirmation: パスワード（確認用）
+        link_login: ログイン

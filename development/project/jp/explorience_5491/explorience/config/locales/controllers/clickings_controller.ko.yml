@@ -1,0 +1,6 @@
+ko:
+  controllers:
+    clickings_controller:
+      over_clicking_times_error:
+        notice: 클릭 횟수 제한에 도달했기 때문에 더 이상 체험에 대한 클릭 수 없습니다.
+        guidance: 이 경험을 클릭하고 싶은 경우는 번거로우 시겠지만 클릭 후 다른 경험을 취소하십시오.

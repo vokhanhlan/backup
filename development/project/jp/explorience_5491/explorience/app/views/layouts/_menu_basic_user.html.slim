@@ -1,0 +1,53 @@
+nav#menu
+  ul
+    li
+      = link_to  mypage_path do
+        = t "views.layouts.menu.mypage"
+    li.language-switch
+      a data-toggle="collapse" data-target="#language"
+         = t('views.layouts.menu.language')
+         i.eicon-dir-down
+    #language.collapse
+      - (I18n.available_locales - [I18n.locale]).each do |loc|
+        li
+          = link_to set_locale_path(new_locale: loc), method: :post do
+            .text
+              = Constants.language_switch["#{loc}"]
+    li.popular-tag
+      a data-toggle="collapse" data-target="#popular"
+        = t "views.layouts.menu.tag.popular"
+        i.eicon-dir-down
+    #popular.tag-block.collapse
+      / NOTE: taggings_context, translations_nameはApplicationHelper#popular_tags内で定義してcacheしている
+      .content_label
+        - popular_tags.each do |tag|
+          .tag
+            .tag-content
+              = link_to tag_filter_path(tag: tag.translations_name, to: root_path) do
+                .tag-box
+                  = truncate(tag.translations_name, length: 21, separator: " ")
+    li.place-tag
+      a data-toggle="collapse" data-target="#place"
+        = t "views.layouts.menu.tag.place"
+        i.eicon-dir-down
+    #place.tag-block.collapse
+      .content_label
+        - prefecture_tags.each do |tag|
+          .tag
+            .tag-content
+              = link_to tag_filter_path(tag: tag.name, to: root_path) do
+                .tag-box
+                  = truncate(tag.name, length: 21, separator: " ")
+    li
+      = link_to privacy_policy_path do
+        = t "views.layouts.menu.privacy_policy"
+    / TODO: ver2.0リリースに向け、一時的に機能マスク
+    /li
+      = link_to guides_path do
+        = t "views.layouts.menu.guide"
+    li
+      = link_to setting_path do
+        = t "views.layouts.menu.setting"
+    li
+      = link_to destroy_user_session_path, method: :delete do
+        = t "views.layouts.menu.logout"

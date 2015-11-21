@@ -1,0 +1,6 @@
+en:
+  controllers:
+    clickings_controller:
+      over_clicking_times_error:
+        notice: You have reached the maximum selected locations. You cannot add any more locations.
+        guidance: In order to select this location, you must review and uncheck one of your other selected locations. We are sorry for the inconvience.

@@ -1,0 +1,38 @@
+<!-- Page Content -->
+<div class="container">
+<!-- Page Heading/Breadcrumbs -->
+  <div class="row">
+      <%= render  partial: '/shared/flash/flash_messages', locals: {notice_type:"notice"} %>
+      <div class="col-lg-12">
+            <h2 class="page-header">
+                <span class="pull-left">List All Post&nbsp;&nbsp; </span>
+                <% if current_user %>
+                  <%= button_to "New Post", new_post_path, :method => :get, :remote => true, "data-target" => "#myModal", "data-toggle" => "modal", :type => "button", class: "btn btn-success" %>
+                <% else %>
+                  <div>&nbsp;</div>
+                <% end %>
+            </h2>
+          <ol class="breadcrumb">
+              <li><a href="/">Home</a>
+              </li>
+              <li class="active">List All Post</li>
+          </ol>
+      </div>
+  </div>
+  <br/>
+ <div class="col-md-10">
+    <%= render  partial: 'shared/posts/list_posts', locals:  {posts:@posts} %>
+ </div>
+ <div class="col-md-2">
+    <%= render  partial: 'shared/categories/list_categories' %>
+  </div>
+<br/>
+<br/>
+<div class="col-md-12">
+  <div class="text-center">
+    <%= paginate @posts %>
+  </div>
+</div>
+
+</div>
+<div aria-hidden="true" aria-labelledby="myModalLabel" class="modal fade" id="myModal" role="dialog" tabindex="-1"></div>

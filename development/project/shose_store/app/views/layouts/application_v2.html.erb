@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Shose Shop</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<%= stylesheet_link_tag    'application_user', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body> 
+	<%= render"layouts/header"%>
+	<div id="content">
+		<%= render"layouts/left_panel"%>
+		<div id="main">
+		
+			<div id="inside">
+			<img src=<%=asset_path("title4.gif")%> alt="" height="17" width="159"><br/>
+			<%= yield %>
+			</div>
+			
+		</div>
+	</div>
+	<%= render"layouts/footer"%>
+<map name="Map">
+	<area shape="rect" coords="16,306,159,326" href="#">
+</map>
+</body>
+</html>

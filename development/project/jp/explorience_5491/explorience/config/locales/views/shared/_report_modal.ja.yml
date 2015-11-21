@@ -1,0 +1,24 @@
+ja:
+  views:
+    shared:
+      _report_modal:
+        title: 違反画像報告
+        guidance: この画像を通報します。違反理由を選択し、通報ボタンを押してください。
+        form:
+          email: メールアドレス（必須）
+          email_guidance: メールアドレスを入力してください
+          invalid_type: 違反内容（必須）
+          reason: 違反理由（任意）
+        select_box_items:
+          -
+            - 著作権侵害
+            - 0
+          -
+            - 公序良俗に反する
+            - 1
+          -
+            - その他
+            - 2
+        btn:
+          confirm: この画像を通報しますか？
+          submit: 通報

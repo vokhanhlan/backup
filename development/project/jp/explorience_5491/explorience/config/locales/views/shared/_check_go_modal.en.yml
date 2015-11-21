@@ -1,0 +1,8 @@
+en:
+  views:
+    shared:
+      _check_go_modal:
+        title: Confirmation
+        cancel_confirmation: Are you sure you want to cancel? Checking this box removes your selection from your "Wish to go" list.
+        caution: Ranking of "the experience that you with to go" will be changed if you canceled this check.
+        cancel_btn: Submit

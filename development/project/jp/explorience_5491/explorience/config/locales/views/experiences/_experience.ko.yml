@@ -1,0 +1,12 @@
+ko:
+  views:
+    experiences:
+      _experience:
+        contents:
+          tel: "전화 :"
+          address: "위치 :"
+          tag:
+            show_all: 모든 태그를 표시
+            show_part: 닫기
+        relation:
+          title: 관련된 비슷한 경험

@@ -1,0 +1,9 @@
+th:
+  views:
+    users:
+      _uploaded_photo:
+        unpublished:
+          title: ไม่ตีพิมพ์
+          description:
+            - ภาพนี้เป็นภาพในที่ไม่ได้รับการตีพิมพ์
+            - หากคุณกำลังโพสต์แตะภาพคลิกที่ปุ่มโพสต์

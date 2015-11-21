@@ -1,0 +1,7 @@
+ko:
+  views:
+    shared:
+      _revisit_modal:
+        explanation: '"가고 싶다" "갔다"모두를 체크하는 경우 "다시 방문하고 싶다"체험으로 확인됩니다.'
+        close_btn: 닫기
+        display_check: 다음에 다시 볼 수없는

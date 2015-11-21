@@ -1,0 +1,25 @@
+<%= form_for(@loai_san_pham) do |f| %>
+  <% if @loai_san_pham.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@loai_san_pham.errors.count, "error") %> prohibited this loai_san_pham from being saved:</h2>
+
+      <ul>
+      <% @loai_san_pham.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ten %><br>
+    <%= f.text_field :ten %>
+  </div>
+  <div class="field">
+    <%= f.label :ma_loai_cha %><br>
+    <%= f.number_field :ma_loai_cha %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

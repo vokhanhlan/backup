@@ -1,0 +1,7 @@
+ko:
+  views:
+    shared:
+      _error_modal:
+        title: 통신 오류
+        explanation: 데이터베이스에 저장하는데 실패했습니다. 수고 스럽겠지만 다시 시도하세요.
+        close_btn: 닫기

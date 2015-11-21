@@ -1,0 +1,5 @@
+ja:
+  controllers:
+    invalid_images_controller:
+      report:
+        failed_to_create: 違反画像の通報に失敗しました。再度お試しください。

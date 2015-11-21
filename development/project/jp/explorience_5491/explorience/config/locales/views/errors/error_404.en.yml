@@ -1,0 +1,6 @@
+en:
+  views:
+    errors:
+      error_404:
+        header: 404 File Not Found
+        body: Page you are looking for could not be found.

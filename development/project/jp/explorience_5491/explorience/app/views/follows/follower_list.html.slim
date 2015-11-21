@@ -1,0 +1,8 @@
+.follow-list-wrap
+  - if @followers.present?
+    table.table
+      tbody
+        = render partial: 'follows/following_follower', collection: @followers, locals: { display_user: @display_user }
+  - else
+    .follow-list--none
+      = t 'views.follows.follower_list.none_list'

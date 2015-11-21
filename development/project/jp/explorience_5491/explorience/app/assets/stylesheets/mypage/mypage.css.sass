@@ -1,0 +1,53 @@
+@import "shared/mixin"
+@import "shared/variables"
+
+// マイページ,ユーザーページ
+.experience-contents
+  margin-top: 60px
+  #experienceContents
+    margin-top: 30px
+    +phone_portrait
+      margin-top: 50px
+    +phone_landscape
+      margin-top: 0px
+
+#mypageWrap
+  .user-name-sns-block__sns
+    display: none
+  .unpublished
+    img
+      +filter(brightness(40%))
+
+.unpublished-block
+  position: absolute
+  z-index: 1
+  color: #ffffff
+  pointer-events: none
+  .unpublished-btn
+    width: 200px
+    padding: 10px
+    border: solid 1px
+    margin: 0 auto
+    text-align: center
+    +border-radius()
+    color: #ffffff
+  .unpublished-description
+    text-align: center
+    margin-top: 20px
+
+#userShowWrap
+  .user-wrap
+    .btn-block
+      .btn-go, .btn-went, .btn-revisit
+        background-color: #77d7cb
+        &:hover
+          background-color: lighten(#77d7cb, 10%)
+      .btn_unchecked_color
+        background-color: #f5f5f5
+        color: #666666
+        &:after
+          +opacity(0)
+        .btn-block__title
+          color: #666666
+
+

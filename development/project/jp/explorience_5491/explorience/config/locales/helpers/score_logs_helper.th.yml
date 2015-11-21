@@ -1,0 +1,9 @@
+th:
+  helpers:
+    score_logs_helper:
+      login: โบนัสเข้าสู่ระบบได้รับการเพิ่ม
+      clicking: ประสบการณ์โบนัสการตรวจสอบได้รับการเพิ่ม
+      photo: ภาพถ่ายโบนัสที่โพสต์ได้รับการเพิ่ม
+      follows:
+        follower_html: 'ตามมาจากนาย %{name}'
+        following_html: 'ผมทำตาม %{name} ของ'

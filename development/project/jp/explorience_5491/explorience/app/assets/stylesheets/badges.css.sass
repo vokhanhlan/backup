@@ -1,0 +1,49 @@
+@import "shared/variables"
+@import "shared/mixin"
+
+=border-triangle($color)
+  border-top: 30px solid $color
+  border-right: 80px solid transparent
+  border-left: 80px solid transparent
+
+.badges
+  .badge-block__content
+    width: 160px
+    margin: 0 auto
+    position: relative
+    &:after
+      content: ""
+      position: absolute
+  .badge-gold
+    background: #ffd700
+    &:after
+      +border-triangle(#ffd700)
+  .badge-silver
+    background: #c0c0c0
+    &:after
+      +border-triangle(#c0c0c0)
+  .badge-bronze
+    background: #c47222
+    &:after
+      +border-triangle(#c47222)
+  .badge-block__tags
+    width: 80%
+    margin: 40px auto 30px
+    overflow-x: scroll
+    overflow-y: hidden
+    white-space: nowrap
+    .tag-content
+      background: white
+  .badge-count
+    color: white
+    font-size: 48px
+    text-align: center
+  ul
+    padding: 0
+    margin: 0
+    text-align: center
+    li
+      display: inline
+      list-style-type: none
+      font-size: 22px
+      color: white

@@ -1,0 +1,7 @@
+ja:
+  views:
+    shared:
+      _revisit_modal:
+        explanation: 「行きたい」「行った」の両方をチェックしている場合、「再訪したい」体験としてチェックされます。
+        close_btn: 閉じる
+        display_check: 次回以降は表示させない

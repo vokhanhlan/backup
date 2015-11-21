@@ -1,0 +1,24 @@
+en:
+  views:
+    shared:
+      _report_modal:
+        title: Reporting of violation image
+        guidance: Report this image. Select a violation reason, please press the report button.
+        form:
+          email: Email address (Required)
+          email_guidance: Input your email address.
+          invalid_type: Violation type (Required)
+          reason: Reasons for violation (Optional)
+        select_box_items:
+          -
+            - Infringement of copyright.
+            - 0
+          -
+            - Contrary to public order and morality
+            - 1
+          -
+            - Other reasons.
+            - 2
+        btn:
+          confirm: Are you sure you want to report this image?
+          submit: Report

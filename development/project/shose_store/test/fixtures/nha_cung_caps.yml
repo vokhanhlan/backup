@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ten: 
+  dia_chi: 
+  email: 
+  so_dien_thoai: MyString
+
+two:
+  ten: 
+  dia_chi: 
+  email: 
+  so_dien_thoai: MyString

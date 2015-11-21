@@ -1,0 +1,21 @@
+smtp_default: &smtp_default
+  perform_deliveries: true
+  delivery_method: :smtp
+  host: localhost:3000
+  address:              smtp.gmail.com
+  port:                    587
+  domain:               hyakuren.org
+  authentication:    plain
+  user_name:          ENV['USER_NAME_SMTP']
+  password:             ENV['PASSWORD_SMTP']
+  enable_starttls_auto: true
+
+development:
+  <<: *smtp_default
+
+test:
+  <<: *smtp_default
+
+production:
+  <<: *smtp_default
+  host: explorience.jp

@@ -1,0 +1,6 @@
+th:
+  views:
+    shared:
+      _upload_modal:
+        photo_upload_message: โดยการโพสต์ภาพให้แบ่งปันประสบการณ์
+        submit: ผมจะโพสต์

@@ -1,0 +1,7 @@
+th:
+  helpers:
+    application_helper:
+      sorting_component:
+        by_evaluation: เพื่อประเมินผลสูง
+        by_posted: โพสต์วันที่สั่งซื้อ
+        title: เรียงตาม

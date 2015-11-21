@@ -1,0 +1,92 @@
+= form_for :dump, url: {action: "import_csv"}, html: {multipart: true} do |f|
+  table.csv-input
+    tr
+      td
+        = label_tag  "dump_file", "Select a CSV File:"
+        = f.file_field :file, id: "csvInput"
+    tr
+      td
+        = submit_tag 'Submit', data: {confirm: "体験コンテンツの一括登録を実行しますか？"}
+  #descriptionArea
+    .csv-preview-title
+      | Expected CSV file formats are as follows:
+    .csv-preview-table
+      table
+        tr
+          td
+            | :advertiser_id
+          td
+            | :title_ja
+          td
+            | :description_ja
+          td
+            | :address_ja
+          td
+            | :workday_ja
+          td
+            | :start_date
+          td
+            | :end_date
+          td
+            | :tel
+          td
+            | :url
+          td
+            | :title_en
+          td
+            | :description_en
+          td
+            | :address_en
+          td
+            | :workday_en
+          td
+            | :prefecture_ja
+          td
+            | :prefecture_en
+          td
+            | :genres_ja
+          td
+            | :genres_en
+          td
+            | :photo_id
+        tr
+          td
+            | 広告主ID
+          td
+            | 体験名(ja)
+          td
+            | 体験の説明(ja)
+          td
+            | 住所(ja)
+          td
+            | 営業日(ja)
+          td
+            | 開始日(YYYYMMDD)
+          td
+            | 終了日(YYYYMMDD)
+          td
+            | 電話
+          td
+            | 体験URL
+          td
+            | 体験名(en)
+          td
+            | 体験の説明(en)
+          td
+            | 住所(en)
+          td
+            | 営業日(en)
+          td
+            | 地域タグ(ja)
+          td
+            | 地域タグ(en)
+          td
+            | ジャンルタグ(ja)
+          td
+            | ジャンルタグ(en)
+          td
+            | 画像ID
+  #previewArea
+    .csv-preview-title
+      | Uploading CSV preview is as follows:
+    #csvPreview.csv-preview-table

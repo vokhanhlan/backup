@@ -1,0 +1,13 @@
+ja:
+  models:
+    score_log:
+      # TODO HACK: 下記文言は暫定。正式文言確定次第改修する。
+      click_been_there: 体験チェックボーナス（行った）が加算されました。
+      click_wish_to_go: 体験チェックボーナス（行きたい）が加算されました。
+      activated_exp_by_click: 体験活性ボーナス（クリック）が加算されました。
+      activated_exp_by_modifying: 体験活性ボーナス（変更）が加算されました。
+      followed: フォロワーボーナスが加算されました。
+      following: フォローボーナスが加算されました。
+      login: 継続ログインボーナスが加算されました。
+      pinned_photo: 投稿写真固定ボーナスが加算されました。
+      upload_photo: 写真投稿ボーナスが加算されました。

@@ -1,0 +1,4 @@
+th:
+  controllers:
+    follows_controller:
+      follow_error: ไม่สามารถทำตาม

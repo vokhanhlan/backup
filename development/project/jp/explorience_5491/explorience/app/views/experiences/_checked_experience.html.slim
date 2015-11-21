@@ -1,0 +1,13 @@
+.checked-experience.infinite-content
+  .checked-experience__img
+    div
+      - main_img = render partial: "experiences/main_photo", locals:{main_photo: main_photo(checked_experience), upload_user_img: nil, fixed_photo_count: nil}
+      = link_to main_img, experience_title_path(checked_experience)
+  .checked-experience__img-rank-and-title-block
+    div
+      .checked-experience__title
+        = link_to checked_experience.title, experience_title_path(checked_experience)
+
+  / TODO: 2015/04/20のリリースには乗せない
+  / .checked-experience__rank
+/     = checked_experience.rankings.try(:find_by, user_id: user.id).rank

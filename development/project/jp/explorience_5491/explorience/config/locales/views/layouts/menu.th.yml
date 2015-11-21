@@ -1,0 +1,18 @@
+th:
+  views:
+    layouts:
+      menu:
+        previous_page: กลับไปที่หน้าก่อนหน้านี้
+        mypage: หน้าของฉัน
+        relation:
+          experience: ประสบการณ์การทำงานของแท็กที่เกี่ยวข้อง
+        language: เปลี่ยนภาษา
+        account: บัญชี
+        logout: ออกจากระบบ
+        login: เข้าสู่ระบบ
+        tag:
+          popular: แท็กยอดนิยม
+          place: ที่ตั้งชื่อ
+        privacy_policy: นโยบายความเป็นส่วนตัว
+        guide: คู่มือ
+        setting: การตั้งค่า

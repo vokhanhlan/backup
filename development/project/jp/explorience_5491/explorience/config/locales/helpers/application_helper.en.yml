@@ -1,0 +1,7 @@
+en:
+  helpers:
+    application_helper:
+      sorting_component:
+        by_evaluation: Score - Hi to Low
+        by_posted: Date - Newest to Oldest
+        title: Sort by

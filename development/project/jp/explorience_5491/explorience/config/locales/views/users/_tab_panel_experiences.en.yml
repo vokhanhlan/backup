@@ -1,0 +1,10 @@
+en:
+  views:
+    users:
+      _tab_panel_experiences:
+        btn:
+          went: Been there
+          go: Wish to go
+          revisit: Going again
+        experience:
+          no_contents: No locations to display at this time.

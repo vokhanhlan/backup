@@ -1,0 +1,17 @@
+#errorModal.modal.fade aria-hidden="true"
+  .modal-dialog
+    .modal-body
+      .modal-body__title
+        = t 'views.shared._error_modal.title'
+      - if errors.empty?
+        p
+          = t 'views.shared._error_modal.explanation'
+      - else
+        - if errors.is_a?(Array)
+          - errors.each do |error|
+            = simple_format error
+        - else
+          = simple_format errors
+    .modal-footer
+      .btn.btn-default data-dismiss="modal"
+        = t 'views.shared._error_modal.close_btn'

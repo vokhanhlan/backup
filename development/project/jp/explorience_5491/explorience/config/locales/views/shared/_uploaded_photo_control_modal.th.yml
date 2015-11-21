@@ -1,0 +1,6 @@
+th:
+  views:
+    shared:
+      _uploaded_photo_control:
+        title: การตั้งค่าของภาพ
+        delete: คุณต้องการลบ

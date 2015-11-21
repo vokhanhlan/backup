@@ -1,0 +1,6 @@
+en:
+  views:
+    shared:
+      _upload_modal:
+        photo_upload_message: By posting a photo, Let's share the experience.
+        submit: Post

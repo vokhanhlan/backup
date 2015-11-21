@@ -1,0 +1,10 @@
+ko:
+  views:
+    users:
+      _tab_panel_experiences:
+        btn:
+          go: 가고 싶은
+          went: 거기
+          revisit: 다시 방문하고 싶은
+        experience:
+          no_contents: 해당하는 경험은 없습니다

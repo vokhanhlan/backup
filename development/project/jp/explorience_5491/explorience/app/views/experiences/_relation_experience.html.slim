@@ -1,0 +1,15 @@
+- img = image_tag(relation_experience.photos.first.img(:normal), :"data-hidpi-src" => relation_experience.photos.first.img(:"normal@2x"))
+
+.side-exp-wrap
+  .side-exp-wrap__img
+    = link_to img, experience_title_path(relation_experience)
+  .side-exp-wrap__content
+    .side-exp__title
+      = link_to relation_experience.title, experience_title_path(relation_experience)
+    .side-exp__count
+      .side-exp__count--go
+        i.eicon-heart
+        = relation_experience.click_count(:go)
+      .side-exp__count--revisit
+        i.eicon-badge
+        = relation_experience.click_count(:revisit)

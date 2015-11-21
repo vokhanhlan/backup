@@ -1,0 +1,5 @@
+en:
+  controllers:
+    invalid_images_controller:
+      report:
+        failed_to_create: 'Failed to create report on image suspeceted of unauthorized use. Please try again.'

@@ -1,0 +1,125 @@
+- description @experience.description
+.experience-show-wrap
+  .experience-photo-block
+    = render partial: "experiences/main_photo", locals:{main_photo: main_photo(@experience), upload_user_img: @upload_user_img, fixed_photo_count: @fixed_photo_count, default_photo_id: @default_photo_id}
+  .experience-show-wrap__content-main-block
+    - if current_user
+      #uploadModalBlock
+        = t 'views.experiences.show.btn.upload_image'
+    - if @uploaded_experience_photos.present?
+      .upload-photo-block
+        = render partial: "experiences/upload_experience_photo", collection: @uploaded_experience_photos, locals:{experience: @experience}
+    .title-block data-experience="#{@experience.id}"
+      h1
+        = @experience.title
+      - revisits = @experience.click_count(:revisit)
+      #revisitBadge
+        - specified = current_user_wish_going_again?(@experience.id)
+        = render partial: 'shared/revisit_badge', locals:{ revisits: revisits, specified: specified }
+    .detail-block
+      .detail-block__description
+        = simple_format @experience.description
+      a data-toggle="collapse" data-parent="#accordion" href="#detailContent"
+        = t 'views.experiences.show.show_more'
+      #detailContent class="panel-collapse collapse"
+        .detail-block__date
+          = select_workday(@experience)
+        .detail-block__address
+          - if @experience.address.present?
+            = t "views.experiences._experience.contents.address"
+            / userAgentがiPhone,iPadの場合はhrefがmaps:に変わる(js制御)
+            = link_to @experience.address, "http://maps.google.com/maps?q=#{@experience.address}", class: "openmap", target: '_blank'
+        .detail-block__tel
+          - if @experience.tel.present?
+            = t 'views.experiences._experience.contents.tel'
+            = internationalized_phone(@experience.tel)
+        .detail-block__url
+          - unless @experience.url.blank? || @experience.advertiser.try(:affiliate_b?)
+            | URL：
+            = link_to @experience.url,
+                "#{@experience.url}",
+                target: "_blank",
+                data: { url: action_log_increase_path,
+                        column: "refered_other_site" }
+        / TODO: スニペットが正しく見えるか要確認
+        / - if user_signed_in?
+          .detail-block__social_button
+            / TODO: providerでbuttonは変えるか検討
+            - if current_user.providers.first.google?
+              button.g-interactivepost data-contenturl="#{request.url}" data-clientid="#{ENV['GOOGLE_CLIENT_ID']}" data-cookiepolicy="single_host_origin" data-prefilltext="" data-calltoactionlabel="GO" data-calltoactionurl="#{request.url}"
+                | social
+    - if @experience.advertiser.try(:affiliate_b?)
+        = link_to t('views.experiences.show.affiliate.link_btn', advertiser_name: @experience.advertiser.name),
+          @experience.url, target: '_blank',
+          id: 'affiliateButton', class: 'btn btn-default btn--affiliate_b',
+          data: { experience_id: @experience.id, user_id: current_user.try(:id), url: affiliations_path }
+    .btn-block
+      / TODO: リファクタリング対象
+      - click_btn_go   = "btn-block__btn-go"
+      - click_btn_went = "btn-block__btn-went"
+      - if current_user
+        - clickings_go   = @experience.clickings_find_by_user("go", current_user.id)
+        - clickings_went = @experience.clickings_find_by_user("went", current_user.id)
+        - click_btn_go   = clickings_go.blank? ? "btn-block__btn-go" : "btn-block__btn-go--checked"
+        - click_btn_went = clickings_went.blank? ? "btn-block__btn-went" : "btn-block__btn-went--checked"
+      .btn-block__go id="btnGo#{@experience.id}"
+        = render partial: 'clickings/button_go',
+                 locals: {experience: @experience, click_btn_go: click_btn_go}
+      .btn-block__went id="btnWent#{@experience.id}"
+        = render partial: 'clickings/button_went',
+                 locals: {experience: @experience, click_btn_went: click_btn_went}
+      .btn-block__revisit
+        .btn.btn-default.btn-block__revisit--checked data-experience_revisit="#{@experience.id}"
+          .revisit-count
+            = render partial: 'shared/revisit_count', locals:{ revisits: revisits}
+          .revisit-content
+            .revisit-content__badge
+              i.eicon-badge
+            .revisit-content__wording
+              = t 'views.experiences.show.btn.revisit'
+    .tag-block
+      - @experience.tags_least_used.each do |tag|
+        .tag
+          .tag-content
+            = link_to tag_filter_path(tag: tag.name, to: root_path) do
+              .tag-box
+                = tag.name
+    .user-block
+      .user-block__clicking-user
+        / TODO: イテレーターを一つで処理。js側で表示の制御
+        .user-block__clicking-user--part
+          - @click_users.slice(0,5).each do |user|
+            = link_to image_tag(user.providers.first.photo_url), user_path(user.id)
+        .user-block__clicking-user--all
+          - @click_users.each do |user|
+            = link_to image_tag(user.providers.first.photo_url), user_path(user.id)
+          .close-btn
+            = t "views.experiences.show.btn.show_part"
+      - if @click_users.size > 5
+        .count-block
+          .count-block__user
+            | +
+            = @click_users.size - 5
+  .side-exp-content-block
+    = render partial: "experiences/relation_experience", collection: @relation_tag_experiences
+
+.report-modal
+  = render partial: "shared/report_modal", locals: { photo_id: main_photo(@experience).id }
+= render partial: 'shared/check_go_modal', locals: {experience: @experience}
+= render partial: 'shared/check_went_modal', locals: {experience: @experience}
+= render partial: 'shared/revisit_modal'
+= render partial: "shared/error_modal", locals: { errors: flash[:errors] } if flash[:errors]
+= render partial: "shared/report_completed_modal" if flash[:report_completed]
+= render partial: 'shared/upload_modal', locals: {experience: @experience}
+- if user_signed_in?
+  / TODO: モーダルの表示方法が変更になったらこの条件は変わる。
+  / 現状は、twitterシェアに対応したので下記の分岐になる。
+  - if current_user.providers.first.twitter?
+    = render partial: 'shared/sns_upload_modal', locals: {experience: @experience, photo_id: flash[:upload_completed]} if flash[:upload_completed]
+/ TODO: スニペットが正しく見えるか要確認
+/ javascript:
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/client:plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();

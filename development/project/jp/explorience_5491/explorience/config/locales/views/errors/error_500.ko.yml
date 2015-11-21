@@ -1,0 +1,6 @@
+ko:
+  views:
+    errors:
+      error_500:
+        header: 500 내부 서버 오류
+        body: 죄송합니다. 시스템에서 오류가 발생했습니다.

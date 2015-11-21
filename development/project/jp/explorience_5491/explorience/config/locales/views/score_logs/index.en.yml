@@ -1,0 +1,5 @@
+en:
+  views:
+    score_logs:
+      index:
+        title: Score History

@@ -1,0 +1,49 @@
+<%= form_for(@san_pham) do |f| %>
+  <% if @san_pham.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@san_pham.errors.count, "error") %> prohibited this san_pham from being saved:</h2>
+
+      <ul>
+      <% @san_pham.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ma_loai_san_pham %><br>
+    <%= f.number_field :ma_loai_san_pham %>
+  </div>
+  <div class="field">
+    <%= f.label :ma_nha_cung_cap %><br>
+    <%= f.number_field :ma_nha_cung_cap %>
+  </div>
+  <div class="field">
+    <%= f.label :ten %><br>
+    <%= f.text_field :ten %>
+  </div>
+  <div class="field">
+    <%= f.label :don_gia %><br>
+    <%= f.number_field :don_gia %>
+  </div>
+  <div class="field">
+    <%= f.label :mo_ta %><br>
+    <%= f.text_area :mo_ta %>
+  </div>
+  <div class="field">
+    <%= f.label :san_pham_moi %><br>
+    <%= f.number_field :san_pham_moi %>
+  </div>
+  <div class="field">
+    <%= f.label :trang_thai %><br>
+    <%= f.number_field :trang_thai %>
+  </div>
+  <div class="field">
+    <%= f.label :ngay_san_xuat %><br>
+    <%= f.date_field :ngay_san_xuat %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

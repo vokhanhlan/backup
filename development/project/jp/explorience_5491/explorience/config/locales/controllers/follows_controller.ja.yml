@@ -1,0 +1,4 @@
+ja:
+  controllers:
+    follows_controller:
+      follow_error: フォローできませんでした。

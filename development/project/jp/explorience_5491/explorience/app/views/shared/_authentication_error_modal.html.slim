@@ -1,0 +1,11 @@
+#loginError.modal.fade data-replace="true" role='dialog' aria-hidden="false"
+  .modal-dialog
+    .modal-body
+      .modal-body__login-error
+        = t "views.shared._authentication_error_modal.failed"
+      p.modal-body__contents
+        - provider_name = @unauthenticated.capitalize
+        = t "views.shared._authentication_error_modal.connection_error", provider: provider_name
+        br
+        = t "views.shared._authentication_error_modal.try_again"
+    = render partial: 'shared/login_modal_footer'

@@ -1,0 +1,6 @@
+ja:
+  views:
+    shared:
+      _upload_modal:
+        photo_upload_message: 写真を投稿して、体験を共有しましょう。
+        submit: 投稿する

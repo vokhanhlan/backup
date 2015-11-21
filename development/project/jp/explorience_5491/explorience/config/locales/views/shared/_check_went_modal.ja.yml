@@ -1,0 +1,7 @@
+ja:
+  views:
+    shared:
+      _check_went_modal:
+        title: 確認
+        cancel_confirmation: 「行った」ボタンのチェックを取り消してもよろしいですか？
+        cancel_btn: チェックを取り消す

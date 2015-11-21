@@ -1,0 +1,5 @@
+th:
+  helpers:
+    users_helper:
+      published: ฉันต้องการที่จะโพสต์
+      unpublished: มันจะอยู่ในที่ไม่ได้รับการตีพิมพ์

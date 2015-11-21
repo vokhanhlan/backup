@@ -1,0 +1,7 @@
+ja:
+  views:
+    shared:
+      _error_modal:
+        title: 通信エラー
+        explanation: データベースへの保存に失敗しました。お手数ですが、もう一度やり直して下さい。
+        close_btn: 閉じる

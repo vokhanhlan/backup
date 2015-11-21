@@ -1,0 +1,10 @@
+.rank__number
+  = ranking.rank
+/ TODO: lock, unlockのeiconが必要
+.rank__lock
+  - if ranking.locked
+    .rank__lock--locked
+      = image_tag 'lock.png'
+  - else
+    .rank__lock--unlock
+      = image_tag 'unlock.png'

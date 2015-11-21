@@ -1,0 +1,7 @@
+ko:
+  views:
+    follows:
+      _follow_btn:
+        followed: 팔로 잉
+        follow: 팔로우하기
+

@@ -1,0 +1,6 @@
+digraph models_diagram {
+	graph[overlap=false, splines=true]
+	"Comment" [shape=Mrecord, label="{Comment|id :integer\lcontent :text\lproduct_id :integer\lcreated_at :datetime\lupdated_at :datetime\l}"]
+	"Product" [shape=Mrecord, label="{Product|id :integer\lname :string\ldescription_at :string\lprice :float\lcreated_at :datetime\lupdated_at :datetime\l}"]
+	"Product" -> "Comment" [arrowtail=odot, arrowhead=crow, dir=both color="#5ECD98"]
+}

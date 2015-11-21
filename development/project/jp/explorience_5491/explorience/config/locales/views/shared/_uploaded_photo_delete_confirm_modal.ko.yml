@@ -1,0 +1,7 @@
+ko:
+  views:
+    shared:
+      _uploaded_photo_delete_confirm:
+        title: 정말 삭제 하시겠습니까?
+        delete: 예
+        back: 아니오

@@ -1,0 +1,15 @@
+default: &default
+  api_key: <%= ENV["ERRBIT_API_KEY"] %>
+  host:    <%= ENV["ERRBIT_HOST"] %>
+  port:    <%= ENV["ERRBIT_PORT"] %>
+  secure:  <%= ENV["ERRBIT_SECURE"] %>
+development:
+  <<: *default
+test:
+  <<: *default
+production:
+  <<: *default
+staging:
+  <<: *default
+beta:
+  <<: *default

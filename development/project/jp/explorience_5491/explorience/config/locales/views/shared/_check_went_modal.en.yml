@@ -1,0 +1,7 @@
+en:
+  views:
+    shared:
+      _check_went_modal:
+        title: Confirmation
+        cancel_confirmation: Are you sure you want to cancel? Checking this box removes your selection from your "Been there" list.
+        cancel_btn: Submit

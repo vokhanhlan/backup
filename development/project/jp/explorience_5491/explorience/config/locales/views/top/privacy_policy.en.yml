@@ -1,0 +1,80 @@
+en:
+  views:
+    top:
+      privacy_policy:
+        title: Privacy Policy
+        preface: Basic Policy on Personal Information Protection
+        content: Ltd. veteran (hereinafter referred to as the "Company") in, explorience.jp website (hereinafter referred to as "the Site".) Upon operation of, and sufficient for personal information We respect your privacy as well as perform a consideration, and we strive to be done the proper management.
+        section1:
+          heading: 1. Definition of personal information
+          content: Personal information, individuals name, date of birth, age, gender, address, telephone number, an electronic mail address, etc., by combining one or two or more of these, a specific individual refers to those that can be identified.
+        section2:
+          heading: 2. Personal information purposes
+          content:
+            - Personal information of the user, as a rule, will be available in the following purposes.
+            - 1. At login, authentication after login, system management for users of automatic display, such as a user needed to use of our service management of information in various screens
+            - 2. Update request of information related to the product
+            - 3. Provides information about our services
+            - 4. Analysis and analysis necessary for the development of improved and new services for our services
+            - 5. Correspondence, etc. to the opinions and requests for our
+            - 6. Contact to the user, the corresponding answers concerning the inquiry from the user
+            - 7. With respect to our services, in order to create the processed statistical data into a format that can not be personally identifiable
+            - 8. Partners (opening businesses, advertisers, and includes such Placement. Hereinafter the same) in a range that can not be personally identifiable to provide statistical data related to products sold to
+            - 9. Processing of goods your order from the user, the process of application to the present campaign, processing of payment, delivery of products and gifts, such as responding to various inquiries, transaction, in order to conduct business related to after-sales support
+            - 10. By the Company or partners, users of gender, age, place of residence, personal attributes or access history within our services, such as hobbies and preferences, provides information about the products using such as purchase history, delivery of targeted advertising
+            - If you want to use for purposes other than those described above we have explicitly beforehand purpose when you provide your personal information so please check.
+            
+        section3:
+          heading: 3. Acquisition of personal information
+          content: The Company obtains your personal information by fair means, I do not get by an unauthorized manner contrary to the users intention.
+        section4: 
+          heading: 4. Adequate protection of personal information
+          content: We, the personal information of the user, will take the appropriate action to accurate, up-to-date. In addition, I will manage the personal information of the user properly and safely.
+        section5:
+          heading: 5. Contractors of supervision
+          content: We, you might want to entrust the handling of acquired personal information. In this case, it is entered into the required agreement of confidentiality agreement, etc. relating to the deposit of personal information, you can make the necessary and appropriate supervision to a person who has commissioned.
+        section6:
+          heading: 6. Disclosure of personal information, the consent of the offer
+          content:
+            - It assumes that you get consent the following matters in advance is recommended before use of our services.
+            - 1. User in the case that you want to sign up the other transactions purchase of goods for opening businesses, to provide your personal information to opening businesses to the extent necessary to the transaction. The Company, for opening businesses, you should comply with the Personal Information Protection Act, has been required by such contract to be the handling of personal information with consideration to the user's privacy. However, it does not guarantee that the opening operators to comply with this. For details, or to view each opening business' privacy policy, please contact us in opening businesses.
+            - 2. If a third party in accordance with the business alliances with our service of the end and the Company and third party to succeed to all or part of our services, or provide all or part of the service is a third party is already when it is integrated with services that, to provide the necessary information to succession and integration services to the third party.
+        section7:
+          heading: 7. Provided to a third party
+          content:
+            - Even with other than if you are in advance you agree in the previous section, in the following cases, the Company may provide your personal information to third parties.
+            - 1. If you are based on the laws and regulations
+            - 2. Human life, even when it is necessary for the protection of the body, or property, which it is difficult to obtain the consent of the person
+            - 3. A If there is a particular need for promotion of improvement or healthy growth of children and public health, when it is difficult to obtain the consent of the person
+            - 4. In a case where the person who received the agency or local government or the commission of the country there is a need to cooperate for that to perform the office prescribed by the laws and regulations, the hindrance to the performance of the office by obtaining the consent of the person when there is a risk on
+        section8:
+          heading: 8. Disclosure of personal information
+          content:
+            - We, in the case where the user than the person in question was asked to disclose personal information of the person in question, respond without delay. However, in the following cases, you may not disclose in whole or in part.
+            - 1. User or a third person of life, body, property if there is a risk of harm to other rights and interests
+            - 2. If there is likely to cause significant hindrance to the proper implementation of the Company's business
+            - 3. If there is a possibility of violating other laws
+        section9:
+          heading: 9. Correction of personal information
+          content: We, correction than user person in question of personal information of the person, add, delete, in case you are asked to use the stop or erase, a reasonable period of time on which we will confirm that it is a user your identity will respond within.
+        section10:
+          heading: 10. For external SNS service
+          content: When you consent to the use of the personal information on the service may offer service in cooperation with outside SNS services (called "outside service" as follows) such as Facebook, Twitter, Instagram, Pinterest with the approval of users, and a user shows personal information to us by outside service or to cooperate with outside service, approve it because personal information may be shown on we service. I hope that you can confirm the privacy policy of the outside service about registration contents, a public range of the information, the setting closed publicly by all means.
+        section11:
+          heading: 11. Immunity from responsibility
+          content:
+            - As for the following cases, we take no responsibility about the acquisition of the personal information by the third party.
+            - 1. When a user clarifies personal information to a third party using the function of our service or different means
+            - 2. When, by the information that a user input on our service, an individual has been able to tell
+            - 3. When a third party acquires this (I include other sites put the link on from our site) personal information out of the site
+        section12:
+          heading: 12. Change of this privacy policy
+          content: When a change occurs, I announce a purpose beforehand and will tell the acquisition, a range of the personal information of the user, a use purpose immediately.
+        section13:
+          heading: 13. Reference about the personal information
+          content:
+            - Explorience support window
+            - support@explorience.jp 
+        section14:
+          heading: 14. The use of cookie
+          content: Because a user has you use our service more usefully in our site when our site was revisited, I use cookie. In us, match the cookie which I acquired with personal information and use it in the range of achievement of our use purpose.

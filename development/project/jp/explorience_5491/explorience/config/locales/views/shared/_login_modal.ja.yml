@@ -1,0 +1,10 @@
+ja:
+  views:
+    shared:
+      _login_modal:
+        welcome: ようこそ！
+        explanation_html: 私たちは、日本文化の"体験"を紹介するサイトを運営しています。<br>サイト名は「エクスプローリエンス」。
+        btn:
+          facebook: Facebookでスタートする
+          twitter: Twitterでスタートする
+          google: Googleでスタートする

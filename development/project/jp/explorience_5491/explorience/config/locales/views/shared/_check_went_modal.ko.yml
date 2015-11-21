@@ -1,0 +1,7 @@
+ko:
+  views:
+    shared:
+      _check_went_modal:
+        title: 확인
+        cancel_confirmation: '"갔다"버튼의 체크를 취소 하시겠습니까?'
+        cancel_btn: 제출

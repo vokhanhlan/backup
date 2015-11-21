@@ -1,0 +1,7 @@
+th:
+  views:
+    follows:
+      _follow_btn:
+        followed: ดังต่อไปนี้
+        follow: ติดตามเรา
+

@@ -1,0 +1,31 @@
+<div class="panel-body">
+<div class="col-md-10">
+<% @users.each do |user| %>
+<div class="col-md-4">
+  <div class="col-md-5">
+    <a href="#">
+      <%= image_tag user.avatar.url(:thumb),:class =>'img-thumbnail'%>
+    </a>
+  </div>
+  <div class="col-md-7">
+    <div class="title"><a href="#"><%= user.username%></a></div>
+    <div class="date"> Date join: <%= date_format(user.created_at)%></div>
+    <div>Firstname: <%= user.first_name %></div>
+    <div>Lastname: <%= user.last_name %></div>
+    <div class="title">
+      <form action="/posts" method ="get">
+        <input hidden name="user_post" value =<%=user.id%>></input>
+        <button type ="submit" class="btn-info btn-xs">View all Post</button>
+      </form>
+    </div>
+  </div>  
+</div>
+<% end %>
+</div>
+</div>
+</div>
+
+
+
+
+

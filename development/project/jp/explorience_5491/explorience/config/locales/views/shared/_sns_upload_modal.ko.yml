@@ -1,0 +1,6 @@
+ko:
+  views:
+    shared:
+      _sns_upload_modal:
+        explanation: Twitter 이미지를 공유 하시겠습니까?
+        upload_btn: Twitter에 공유

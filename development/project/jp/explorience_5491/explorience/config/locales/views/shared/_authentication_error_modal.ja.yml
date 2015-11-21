@@ -1,0 +1,10 @@
+ja:
+  views:
+    shared:
+      _authentication_error_modal:
+        failed: 認証に失敗しました
+        try_again: もう一度ログインボタンを押して下さい。
+        connection_error: '%{provider}アカウントとの関連づけに失敗しました。'
+        btn:
+          facebook: Facebookでスタートする
+          twitter: Twitterでスタートする

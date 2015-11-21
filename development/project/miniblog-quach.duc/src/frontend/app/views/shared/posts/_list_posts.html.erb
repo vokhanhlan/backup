@@ -1,0 +1,97 @@
+  <div class="col-lg-12">
+      <!-- Get request no parameters -->
+      <% case request.fullpath.split("?")[0] %>
+      <% when "/posts" %>
+          <% posts.each do |post| %>
+            <div class="col-md-3 text-center">
+                <div class="thumbnail">
+                      <% if post.thumbnail_path %>
+                        <div style="width: 237px; height:135px; border:solid">
+                          <%= image_tag "/upload/"+ post.thumbnail_path,:style => " width: 100%; height: 100%; object-fit: contain;" %>
+                        </div>
+                    <% else %>
+                       <div style="width: 237px; height:135px; border:solid">
+                          <%=  image_tag "no_images.jpeg",:style => " width: 100%; height: 100%; object-fit: contain;" %>
+                        </div>
+                    <% end %>
+                    <div class="caption">
+                        <h3><%= post.title.truncate(20, :separator => " ").upcase  %><br>
+                            <!-- TODO: username -->
+                            <small><%= link_to "Author","/users/"+post.user_id.to_s %></small>
+                        </h3>
+                        <p><%= post.description.truncate(40, :separator => " ") %></p>
+                        <ul class="list-inline">
+                            <li>
+                              <a href="/posts/<%= post.id %>" class="btn btn-primary">Read More</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+          <% end %>
+        <!-- If URL is home -->
+        <% when "/" %>
+          <% posts.each_slice(2) do |post| %>
+              <div class="row">
+                  <div class="col-md-2">
+                      <% if post[0].thumbnail_path %>
+                        <div style="width: 150px; height:150px; border:solid">
+                          <%= image_tag "/upload/"+ post[0].thumbnail_path,:style => " width: 100%; height: 100%; object-fit: contain;" %>
+                        </div>
+                      <% else %>
+                         <div style="width: 150px; height:150px; border:solid">
+                            <%=  image_tag "no_images.jpeg",:style => " width: 100%; height: 100%; object-fit: contain;" %>
+                          </div>
+                      <% end %>
+                  </div>
+                  <div class="col-md-4">
+                      <h3>
+                          <a href="/posts/<%= post[0].id %>"><%= post[0].title.truncate(20, :separator => " ").upcase %></a>
+                      </h3>
+                      <p><%= post[0].created_at.strftime("%d/%m/%Y %I:%M") %></p>
+                      <p><%= link_to "Author","/users/"+post[0].user_id.to_s %></p>
+                      <p><%= post[0].description.truncate(35, :separator => " ") %></p>
+                      <p>
+                        <% if current_user && current_user[:id] == post[0].user_id %>
+                          <ul class="list-inline">
+                            <li><%= button_to 'Edit', edit_post_path(post[0].id),:method => :get,:remote => true, "data-target" => "#myModal", "data-toggle" => "modal", :class => "btn btn-primary btn-xs" %></li>
+                            <li><%= link_to 'Destroy', post[0], method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-xs" %></li>
+                          </ul>
+                        <% end %>
+                      </p>
+                  </div>
+                  <% if post[1] %>
+                    <div class="col-md-2">
+                        <% if post[1].thumbnail_path %>
+                          <div style="width: 150px; height:150px; border:solid">
+                            <%= image_tag "/upload/"+ post[1].thumbnail_path,:style => " width: 100%; height: 100%; object-fit: contain;" %>
+                          </div>
+                      <% else %>
+                         <div style="width: 150px; height:150px; border:solid">
+                            <%=  image_tag "no_images.jpeg",:style => " width: 100%; height: 100%; object-fit: contain;" %>
+                          </div>
+                      <% end %>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>
+                            <a href="/posts/<%= post[1].id %>"><%= post[1].title.upcase %></a>
+                        </h3>
+                        <p><%= post[1].created_at.strftime("%d/%m/%Y %I:%M") %></p>
+                        <p><%= link_to "Author","/users/"+post[1].user_id.to_s %></p>
+                        <p><%= post[1].description.truncate(30, :separator => " ") %></p>
+                        <p>
+                          <% if current_user && current_user[:id] == post[1].user_id %>
+                            <ul class="list-inline">
+                            <li><%= button_to 'Edit', edit_post_path(post[1].id),:method => :get,:remote => true, "data-target" => "#myModal", "data-toggle" => "modal", :class => "btn btn-primary btn-xs" %></li>
+                            <li><%= link_to 'Destroy', post[1], method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-xs" %></li>
+                            </ul>
+                          <% end %>
+                        </p>
+                    </div>
+                  <% end %>
+                </div>
+                <br/>
+          <% end %>
+        <% end %>
+  </div>
+<!-- /.row -->

@@ -1,0 +1,7 @@
+/ TODO HACK: 各コンテンツ毎に表示するtagも共通化したい（が、remove_tag_path部分をどうするか悩む）
+.tag
+  .tag-content.tag-content__selected
+    .tag-box
+      = tag.name
+    = link_to remove_tag_path(tag: tag.name, to: root_path) do
+      i.eicon-cancel

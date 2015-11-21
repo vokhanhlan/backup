@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ma_loai_san_pham: 
+  ma_nha_cung_cap: 
+  ten: 
+  don_gia: 
+  mo_ta: 
+  san_pham_moi: 
+  trang_thai: 
+  ngay_san_xuat: MyString
+  datetime: MyString
+
+two:
+  ma_loai_san_pham: 
+  ma_nha_cung_cap: 
+  ten: 
+  don_gia: 
+  mo_ta: 
+  san_pham_moi: 
+  trang_thai: 
+  ngay_san_xuat: MyString
+  datetime: MyString

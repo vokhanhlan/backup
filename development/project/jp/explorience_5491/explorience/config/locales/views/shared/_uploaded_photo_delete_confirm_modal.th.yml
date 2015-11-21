@@ -1,0 +1,7 @@
+th:
+  views:
+    shared:
+      _uploaded_photo_delete_confirm:
+        title: คุณแน่ใจหรือว่าต้องการลบ?
+        delete: ถูก
+        back: ไม่

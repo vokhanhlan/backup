@@ -1,0 +1,9 @@
+en:
+  views:
+    users:
+      _uploaded_photo:
+        unpublished: 
+          title: Not Published
+          description:
+            - This image is in the not published.
+            - If you want to post, tap the image click the button posted.

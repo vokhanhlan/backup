@@ -1,0 +1,13 @@
+#login.modal.fade data-replace="true" role='dialog' aria-hidden="false"
+  .modal-dialog
+    .modal-header
+      a.close data-dismiss="modal"
+        i.eicon-cancel
+    .modal-body
+      .modal-body__logo
+        = image_tag 'logo_beta.svg', size: "120x18"
+      .modal-body__login-message
+        = t 'views.shared._login_modal.welcome'
+      p.modal-body__contents
+        = t 'views.shared._login_modal.explanation_html'
+    = render partial: 'shared/login_modal_footer'

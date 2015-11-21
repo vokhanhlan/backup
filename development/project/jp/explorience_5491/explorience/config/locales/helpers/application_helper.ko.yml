@@ -1,0 +1,7 @@
+ko:
+  helpers:
+    application_helper:
+      sorting_component:
+        by_evaluation: 평가가 높은 순
+        by_posted: 등록일 순
+        title: 정렬

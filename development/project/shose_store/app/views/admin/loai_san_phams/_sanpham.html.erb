@@ -1,0 +1,10 @@
+<% san_phams.each do |sanpham| %>
+<!-- <div><%= book.author.try(:name) %></div> -->
+<div class="imagebook">
+<div class="imagesize"><%= image_tag sanpham.hinh.url(:medium) %></div>  
+<div class="imagesbottom" >
+<div><%= sanpham.ten %></div>
+<div><%= link_to 'Chi tiet', sanpham %></div>
+</div>
+</div>    
+<% end %>

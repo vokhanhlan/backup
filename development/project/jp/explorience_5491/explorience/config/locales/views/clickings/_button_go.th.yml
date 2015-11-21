@@ -1,0 +1,6 @@
+---
+th:
+  views:
+    clickings:
+      _button_go:
+        go: ฉันอยากไป

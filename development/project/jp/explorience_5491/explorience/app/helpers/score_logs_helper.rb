@@ -1,0 +1,2 @@
+module ScoreLogsHelper
+end

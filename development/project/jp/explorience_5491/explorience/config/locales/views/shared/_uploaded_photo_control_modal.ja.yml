@@ -1,0 +1,6 @@
+ja:
+  views:
+    shared:
+      _uploaded_photo_control:
+        title: 画像設定
+        delete: 削除する

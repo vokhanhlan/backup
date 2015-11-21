@@ -1,0 +1,40 @@
+#signup.tablea
+  .div-center
+    h4 = t "views.users.signup.title"
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    .table-row.div-center
+      H3
+      - if flash[:error].present?
+        - flash[:error].each do |e|
+          li
+            = e
+    .table-row
+      .table-col_1
+        = t "views.users.signup.email"
+      .table-col_2
+        = f.email_field :email, required: true, :class =>"form-control", :autofocus =>true
+    .table-row
+      .table-col_1
+        = t "views.users.signup.name"
+      .table-col_2
+        = f.text_field :name, required: true, :class =>"form-control"
+    .table-row
+      .table-col_1
+        = t "views.users.signup.password"
+      .table-col_2
+        = f.password_field :password, required: true, :class =>"form-control"
+        br
+        - if @validatable
+          em
+            = @minimum_password_length
+            | &nbsp;
+            = t "views.users.signup.limit"
+    .table-row
+      .table-col_1
+        = t "views.users.signup.password_confirmation"
+      .table-col_2
+        = f.password_field :password_confirmation, required: true, :class =>"form-control"
+    .table-row
+    .actions.div-center
+      button.btn.btn-primary type="submit" = t "views.users.signup.submit"
+

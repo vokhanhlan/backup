@@ -1,0 +1,8 @@
+.menu-block
+  h4
+    | Experience
+.logout-block
+  = link_to destroy_user_session_path, method: :delete do
+    = t "views.layouts.menu.logout"
+.user-block
+  = current_user.name

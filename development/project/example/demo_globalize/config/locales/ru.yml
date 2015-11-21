@@ -1,0 +1,32 @@
+ru:
+  activerecord:
+    attributes:
+      product:
+        name: "имя"
+        description: "Описание"
+  forms:
+    name: "имя"
+    description: "Описание"
+    messages:
+      success: "Операция была успешно выполнена!"
+    buttons:
+     edit: "Редактировать"
+     submit: "Отправить"
+  menu:
+    new_product: "Добавить статью"
+    edit: "изменить"
+    show: "Показать"
+    delete: "Удаление"
+    languages:
+    lang: "Язык"
+    ru: "Русский"
+    en: "Английский"
+  products:
+    index:
+      title: "Список статей"
+    edit:
+      title: "Редактировать статью"
+    new:
+      title: "Добавить статью"
+      nam: "la"
+

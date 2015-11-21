@@ -1,0 +1,6 @@
+th:
+  views:
+    shared:
+      _sns_upload_modal:
+        explanation: คุณแน่ใจหรือว่าคุณต้องการที่จะแบ่งปันภาพบน Twitter?
+        upload_btn: ส่วนแบ่งของ Twitter

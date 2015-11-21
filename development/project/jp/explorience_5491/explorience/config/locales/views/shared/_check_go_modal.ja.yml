@@ -1,0 +1,8 @@
+ja:
+  views:
+    shared:
+      _check_go_modal:
+        title: 確認
+        cancel_confirmation: 「行きたい」ボタンのチェックを取り消してもよろしいですか？
+        caution: このチェックを取り消した場合、あなたの「行きたい体験ランキング」が変更されます。
+        cancel_btn: チェックを取り消す

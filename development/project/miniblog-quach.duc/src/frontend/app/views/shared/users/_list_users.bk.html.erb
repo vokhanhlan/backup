@@ -1,0 +1,14 @@
+<div class="table-responsive">
+  <table class="table table-hover">
+    <tbody id="list_post">
+      <% @users.each do |user| %>
+              <tr>
+              <td><%= user.first_name %></td>
+              <td><%= user.last_name %></td>
+              <td><%= user.email %></td>
+              <td><%= user.avatar %></td>
+              </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,8 @@
+ja:
+  views:
+    shared:
+      _report_completed_modal:
+        title: 違反画像報告
+        completed: 違反画像の報告が完了しました
+        close: 閉じる
+

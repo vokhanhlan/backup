@@ -1,0 +1,4 @@
+en:
+  helpers:
+    experiences_helper:
+      fixed_period: 'From %{start} to %{end}'

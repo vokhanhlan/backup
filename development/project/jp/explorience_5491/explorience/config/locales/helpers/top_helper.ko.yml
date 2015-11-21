@@ -1,0 +1,7 @@
+ko:
+  helpers:
+    top_helper:
+      experience:
+        go_check: '"가고 싶다"를 체크하고있는 체험'
+        went_check: '"한"을 체크하고있는 체험'
+        revisit_check: '"다시 찾고 싶은"를 체크하고있는 체험'

@@ -1,0 +1,10 @@
+en:
+  views:
+    shared:
+      _login_modal:
+        welcome: Welcome aboard!
+        explanation_html: We are running a site to introduce the "explore" and "experience" of Japanese culture. The site name "Explorience".
+        btn:
+          facebook: Log in with Facebook
+          twitter: Log in with Twitter
+          google: Log in with Google

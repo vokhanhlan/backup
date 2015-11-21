@@ -1,0 +1,29 @@
+// Place all the styles related to the score_logs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "shared/mixin"
+@import "shared/variables"
+
+// TODO HACK: 以下のスタイルは画面モック出来次第、再調整すること。
+.score-logs-wrap
+  .score-logs__title,
+  .score-logs__content__body,
+  .score-logs__content__date
+    padding: 5px
+    margin-bottom: 10px
+  .score-logs__title
+    h1
+      font-size: 18px
+  .score-logs__content__date
+    background-color: #dddddd
+  .score-logs__content__body
+    .log-unread
+      width: 10px
+      height: 10px
+      background-color: red
+      +border-radius(50%)
+      +inline-block
+      margin-right: 5px
+    .log-message
+      +inline-block

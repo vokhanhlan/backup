@@ -1,0 +1,12 @@
+th:
+  views:
+    experiences:
+      show:
+        btn:
+          revisit: ฉันต้องการที่จะเยี่ยมชมอีกครั้ง
+          show_part: ปิด
+          upload_image: ผมจะโพสต์ภาพ
+        uploaded_photo: ภาพที่โพสต์
+        affiliate:
+          link_btn: 'ฉันจะไป%{advertiser_name}'
+        show_more: ฉันเห็นมากขึ้น

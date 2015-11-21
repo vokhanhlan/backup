@@ -1,0 +1,76 @@
+<%= form_for @post, :html => {:multipart => true, :class => "form-horizontal post" } do |f| %>
+<% if @post.errors.any? %>
+<div id="error_expl" class="panel panel-danger">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h3>
+  </div>
+  <div class="panel-body">
+    <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<% end %>
+<div class="col-lg-10">
+  <div class="form-group">
+    <%= f.label :title, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :title, :class => 'form-control',:required=>"" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :description, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_area :description,:rows =>3, :class => 'form-control',:required=>"" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :image, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <div class="col-md-3" style="margin-top:10px">
+        <div class="fileUpload btn btn-primary">  
+          <span>Browse image</span>
+          <%= f.file_field :image, :onchange=>"handlerInputFileChange(this)",:class=>"upload"%>
+        </div>
+        <%= image_tag @post.image.url(:thumb), :class =>'img-thumbnail',:id =>"image-upload", :style=>"width:150px;height:150px;" %>  
+      </div> 
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :content, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+     <%= f.cktext_area :content, :ckeditor => {:toolbar => 'mini', :customConfig => asset_path('ckeditor/config.js')}%>
+   </div>
+ </div>
+ <div>
+  <% if current_user.nil? %>
+  <%= f.hidden_field :user_id, value: "" %>
+  <%else%>
+  <%= f.hidden_field :user_id, value: "#{ current_user.id}" %>
+  <%end%>
+</div>
+<div class="form-group">
+  <div class="col-lg-offset-2 col-lg-10">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+    posts_path, :class => 'btn btn-default' %>
+  </div>
+</div>
+</div>
+<% end %>
+<script>
+function handlerInputFileChange(input) {
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+      $('#image-upload')
+      .attr('src', e.target.result);
+    };
+
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+</script>

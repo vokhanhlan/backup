@@ -1,0 +1,4 @@
+- if current_user.nil?
+  = render "layouts/menu_no_login_user"
+- else
+  = render "layouts/menu_basic_user"

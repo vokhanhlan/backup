@@ -1,0 +1,32 @@
+# set locale for page curation
+basic_information: &basic_information
+  startday: 開始日
+  endday: 終了日
+  title: タイトル
+  description: 説明
+  address: 住所
+  workday: 営業日
+  tel: 電話番号
+  price: 金額
+  prefecture_tags: 都道府県タグ
+  genre_tags: ジャンルタグ
+ja:
+  views:
+    curation:
+      _list_experience:
+        <<: *basic_information
+        image: 画像
+        detail: 詳細
+        id: 順番
+      _form:
+        <<: *basic_information
+      edit:
+      new:
+      show:
+        <<: *basic_information
+      index:
+      dashboard:
+        create_exp: 体験作成
+        list_exp: 体験一覧
+        welcome: ようこそ EXPlorience へ
+        user: 様

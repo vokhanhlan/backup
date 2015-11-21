@@ -1,0 +1,6 @@
+ja:
+  views:
+    errors:
+      error_404:
+        header: 404 File Not Found
+        body: お探しのページは見つかりませんでした

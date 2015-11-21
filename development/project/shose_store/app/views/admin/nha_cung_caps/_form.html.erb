@@ -1,0 +1,33 @@
+<%= form_for(@nha_cung_cap) do |f| %>
+  <% if @nha_cung_cap.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@nha_cung_cap.errors.count, "error") %> prohibited this nha_cung_cap from being saved:</h2>
+
+      <ul>
+      <% @nha_cung_cap.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ten %><br>
+    <%= f.text_field :ten %>
+  </div>
+  <div class="field">
+    <%= f.label :dia_chi %><br>
+    <%= f.text_field :dia_chi %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :so_dien_thoai %><br>
+    <%= f.text_field :so_dien_thoai %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

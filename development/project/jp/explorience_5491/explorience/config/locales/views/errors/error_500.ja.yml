@@ -1,0 +1,6 @@
+ja:
+  views:
+    errors:
+      error_500:
+        header: 500 Internal Server Error
+        body: 申し訳ございません。システムでエラーが発生しました。

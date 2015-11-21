@@ -1,0 +1,13 @@
+#signup.table
+  .table-row
+    = link_to new_session_path(resource_name)
+      = t "views.users.signup.link_login"
+  .table-row
+    = link_to user_omniauth_authorize_path(:facebook)
+      = t 'views.shared._login_modal.btn.facebook'
+  .table-row
+    = link_to user_omniauth_authorize_path(:twitter)
+      = t 'views.shared._login_modal.btn.twitter'
+  .table-row
+    = link_to user_omniauth_authorize_path(:google)
+      = t 'views.shared._login_modal.btn.google'

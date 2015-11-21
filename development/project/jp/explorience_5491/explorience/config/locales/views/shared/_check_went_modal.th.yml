@@ -1,0 +1,7 @@
+th:
+  views:
+    shared:
+      _check_went_modal:
+        title: การยืนยัน
+        cancel_confirmation: คุณแน่ใจหรือว่าต้องการที่จะยกเลิกการตรวจสอบปุ่ม "ไป"?
+        cancel_btn: เสนอ

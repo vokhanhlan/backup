@@ -1,0 +1,6 @@
+ja:
+  controllers:
+    clickings_controller:
+      over_clicking_times_error:
+        notice: クリック回数の上限に達したため、これ以上の体験へのクリックはできません。
+        guidance: この体験をクリックしたい場合は、お手数ですが、クリック済の他の体験をキャンセルしてください。

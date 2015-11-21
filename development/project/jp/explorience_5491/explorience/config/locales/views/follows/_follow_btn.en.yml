@@ -1,0 +1,7 @@
+en:
+  views:
+    follows:
+      _follow_btn:
+        followed: Followed
+        follow: Follow
+        

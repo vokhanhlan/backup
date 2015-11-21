@@ -1,0 +1,12 @@
+ko:
+  views:
+    experiences:
+      show:
+        btn:
+          revisit: 다시 방문하고 싶은
+          show_part: 닫기
+          upload_image: 사진을 게시
+        uploaded_photo: 게시 된 사진
+        affiliate:
+          link_btn: '%{advertiser_name}에 가기'
+        show_more: 더보기

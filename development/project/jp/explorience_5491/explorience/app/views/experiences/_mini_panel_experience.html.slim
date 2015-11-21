@@ -1,0 +1,17 @@
+- ranking = mini_panel_experience.rankings.try(:find_by, user_id: user_id)
+- undraggable = (ranking.try(:rank).nil? || ranking.try(:locked))? 'undraggable' : ''
+div class="infinite-content experience--mini-panel #{undraggable}"
+  .experience--mini-panel__info
+    .experience__rank id="experience#{mini_panel_experience.id}" data-rank="#{ranking.try(:rank)}" data-url="#{toggle_lock_path}"
+      - if ranking
+        = render partial: 'experiences/rank', locals: {ranking: ranking}
+    .experience__image
+      - photo = main_photo(mini_panel_experience)
+      - img = image_tag(photo.img(:normal), :"data-hidpi-src" => photo.img(:"normal@2x"))
+      = link_to img, experience_title_path(mini_panel_experience)
+    .experience__title
+      = link_to mini_panel_experience.title, experience_path(mini_panel_experience.id)
+  - if ranking
+    .experience--mini-panel__handle
+      = image_tag 'grip.png'
+

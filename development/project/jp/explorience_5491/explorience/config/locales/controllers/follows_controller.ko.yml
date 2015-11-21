@@ -1,0 +1,4 @@
+ko:
+  controllers:
+    follows_controller:
+      follow_error: 팔로우 할 수 없습니다.

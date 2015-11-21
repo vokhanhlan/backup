@@ -1,0 +1,7 @@
+en:
+  views:
+    shared:
+      _error_modal:
+        title: Communication error
+        explanation: Failed to save to the database. We are sorry for the inconvenience. Please try again.
+        close_btn: Close

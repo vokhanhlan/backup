@@ -1,0 +1,6 @@
+.follow-block__btn data-user_id="#{following_id}" data-url="#{follow_path}"
+  div class="btn btn-default #{follow_btn_class}"
+    - if follow_btn_class == "followed"
+      = t 'views.follows._follow_btn.followed'
+    - else
+      = t 'views.follows._follow_btn.follow'

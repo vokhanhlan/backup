@@ -1,0 +1,8 @@
+ko:
+  views:
+    shared:
+      _check_go_modal:
+        title: 확인
+        cancel_confirmation: '"가고 싶다"버튼의 체크를 취소 하시겠습니까?'
+        caution: 이 체크를 취소하면 당신의 "가고 싶은 체험 랭킹"이 변경됩니다.
+        cancel_btn: 제출

@@ -1,0 +1,6 @@
+en:
+  views:
+    errors:
+      error_500:
+        header: 500 Internal Server Error
+        body: We are sorry. An error has occured in the system.

@@ -1,0 +1,42 @@
+@import "shared/mixin"
+@import "shared/variables"
+
+#guide
+  .guide-block
+    margin: 5%
+    width: 90%
+    height: auto
+    background-color: $box_bg_color
+    .guide-block__head-title, .guide-block__preface
+      width: 100%
+      height: auto
+      font-weight: bold
+    .guide-block__head-title
+      padding: 20px 0 15px 20px
+      font-size: 20px
+    .guide-block__head-content
+      padding: 0 15px 15px 25px
+      font-size: 14px
+    .guide-block__preface
+      padding: 5px 10px 5px 15px
+      border-bottom: 1px solid $box_border_color
+      background-color: #d6d6d6
+      font-size: 18px
+    .guide-block__content
+      section
+        padding-bottom: 10px
+        border-right: 1px solid $box_border_color
+        border-left: 1px solid $box_border_color
+        border-bottom: 1px solid $box_border_color
+        i
+          float: right
+          margin: 5px 20px 0 0
+      .guide-preface
+        display: block
+        padding: 15px 0 5px 20px
+        font-size: 16px
+        font-weight: bold
+        &:hover, &:focus
+          color: #666
+      .guide-answer
+        margin: 0 30px

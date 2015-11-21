@@ -1,0 +1,21 @@
+en:
+  views:
+    layouts:
+      menu:
+        previous_page: Back
+        mypage: My page
+        relation:
+          experience: Experience related tag
+        language: Language switching
+        account: Account
+        logout: Log out
+        login: Log in
+        signup: Sign up
+        dashboard: Dashboard
+        tag:
+          popular: Popular
+          place: Location Name
+        privacy_policy: Privacy Policy
+        guide: guide
+        setting: Setting
+

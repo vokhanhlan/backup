@@ -1,0 +1,8 @@
+@import "shared/mixin";
+@import "bootstrap";
+
+//bootstrapの.btn要素に対して、mixinのborder-radiusを指定
+//$border-radius-base: 4px !default;
+.btn {
+  @include border-radius($border-radius-base);
+}

@@ -1,0 +1,6 @@
+ko:
+  controllers:
+    photos_controller:
+      upload_error: 사진을 업로드 할 수 없습니다.
+      published_error: 게재 전환 할 수 없습니다.
+      photo_delete: 사진을 삭제할 수 없습니다.

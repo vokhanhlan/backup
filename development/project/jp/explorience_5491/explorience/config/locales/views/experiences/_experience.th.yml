@@ -1,0 +1,12 @@
+th:
+  views:
+    experiences:
+      _experience:
+        contents:
+          tel: "โทรศัพท์:"
+          address: "สถานที่:"
+          tag:
+            show_all: ดูแท็กทั้งหมด
+            show_part: ปิด
+        relation:
+          title: ประสบการณ์ที่คล้ายกับที่เกี่ยวข้อง

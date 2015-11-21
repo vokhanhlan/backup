@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+  <h3>Welcome <%= @user.email %></h3>
+  <p>
+    Authentication for sign up curator succeed
+  </p>
+  <p>
+    To sign up to the site, just follow this link: <%= link_to "Sign up", new_user_registration_url %>.
+  </p>
+  <p>Thank you for using our services and have a great day!</p>
+</body>
+</html>

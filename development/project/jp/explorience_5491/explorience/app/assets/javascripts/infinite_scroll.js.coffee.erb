@@ -1,0 +1,61 @@
+class InfiniteScroll
+  @init: ()->
+    $("#experienceContents").infinitescroll
+      loading: {
+        img:         "/images/page_loading.gif"
+        msgText:     ""
+        finishedMsg: ""
+        finished: after_action
+      }
+      navSelector: "#experiences nav.pagination" # selector for the paged navigation (it will be hidden)
+      nextSelector: "#experiences nav.pagination a[rel=next]" # selector for the NEXT link (to page 2)
+      itemSelector: ".infinite-content" # selector for all items you'll retrieve
+      pathParse: (path, currentPage) ->
+        # pathのフォーマットを ['/?page=', '&another_query=xxx&...'] 形式にする
+        path = path.match(/^(.*?)page=[0-9]+(.*?$)/).slice(1)
+        path[0] = path[0] + 'page='
+        return path
+      state: {
+        currPage: this.current_page()
+      }
+
+  @initForUploadedPhoto: ()->
+    $("#tabPanelPhotos").infinitescroll
+      loading: {
+        img:         "/images/page_loading.gif"
+        msgText:     ""
+        finishedMsg: ""
+        finished: after_action
+      }
+      navSelector: "#photos nav.pagination" # selector for the paged navigation (it will be hidden)
+      nextSelector: "#photos nav.pagination a[rel=next]" # selector for the NEXT link (to page 2)
+      itemSelector: ".infinite-uploaded-photo" # selector for all items you'll retrieve
+      
+  # pageクエリから現在のページ番号を取得
+  @current_page: () ->
+    # ranking入れ替え時に初期ページ数が変更されるため.page.currentを参照
+    currentPage = parseInt( $('#experiences .page.current').text() )
+    if location.search == ""
+      return currentPage
+    else
+      queries = location.search.split('&')
+      $(queries).each( (index, query) ->
+        if query.match(/^.?page=[1-9]+$/)
+          currentPage = parseInt(query.split('=')[1])
+          return false
+      )
+      return currentPage
+
+  after_action = () ->
+    refresh_image_for_retina()
+    $('#infscr-loading').remove()
+    return false
+
+  refresh_image_for_retina = () ->
+    content_arr         = $(".content-wrap, .uploaded-photo__img")
+    refresh_content_arr  = content_arr.slice(content_arr.length - "<%= Constants.counts_per_page %>").find("img:first")
+    for value in refresh_content_arr
+      # 2ページ目以降の体験がRetina表示されないため、明示的にcallする
+      RetinaTag.refreshImage(value)
+
+this.InfiniteScroll = InfiniteScroll

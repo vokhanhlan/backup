@@ -1,0 +1,6 @@
+th:
+  views:
+    follows:
+      follower_list:
+        none_list: แต่ไม่ได้มีผู้ติดตาม
+

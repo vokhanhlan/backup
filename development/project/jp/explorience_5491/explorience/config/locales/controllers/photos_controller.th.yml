@@ -1,0 +1,6 @@
+th:
+  controllers:
+    photos_controller:
+      upload_error: ฉันไม่สามารถอัปโหลดรูปถ่าย
+      published_error: ไม่สามารถเปลี่ยนโพสต์
+      photo_delete: ลบภาพไม่สามารถ

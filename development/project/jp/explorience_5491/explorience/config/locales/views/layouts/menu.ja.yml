@@ -1,0 +1,20 @@
+ja:
+  views:
+    layouts:
+      menu:
+        previous_page: 前のページへ戻る
+        mypage: マイページ
+        relation:
+          experience: 関連したタグの体験
+        language: 言語切替
+        account: アカウント
+        logout: ログアウト
+        login: ログイン
+        signup: サインアップ
+        dashboard: ダッシュボード
+        tag:
+          popular: 人気のタグ
+          place: 地名のタグ
+        privacy_policy: プライバシーポリシー
+        guide: ガイド
+        setting: 設定

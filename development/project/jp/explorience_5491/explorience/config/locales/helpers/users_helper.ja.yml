@@ -1,0 +1,5 @@
+ja:
+  helpers:
+    users_helper:
+      published: "掲載する"
+      unpublished: "非掲載にする"

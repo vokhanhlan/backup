@@ -1,0 +1,12 @@
+ja:
+  views:
+    experiences:
+      _experience:
+        contents:
+          tel: 電話：
+          address: 場所：
+          tag:
+            show_all: 全てのタグを表示
+            show_part: 閉じる
+        relation:
+          title: 関連した似た体験

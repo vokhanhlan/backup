@@ -1,0 +1,6 @@
+en:
+  views:
+    follows:
+      following_list:
+        none_list: There are no users that are to follow.
+        

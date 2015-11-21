@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+<div id="chitiesp">
+
+<div class="chitiet_left"><%= image_tag @san_pham.hinh.url(:medium) %></div>  
+<div class="chitiet_right" >
+<div>Ten san pham: <%= @san_pham.ten %></div></br>
+<p><div>Thong tin san pham: <%= @san_pham.mo_ta %></div></p>
+<div class="chitiet_bottom"> 
+  <div id="add_comment"> All Comment
+<% @comments.each_with_index do |comment| %>
+  <div><%= comment.comment%></div></br>
+  <div>User mail:<%= comment.nguoi_dung.try(:email)%></div>
+<% end %>
+</div>
+<%= form_for @new_comment, remote: true, :authenticity_token => true do |f| %>
+  <div class="field">
+    <%= f.label :comment %><br>
+    <%= f.text_area :comment %>
+     <input type="hidden" name='comment[commentable_id]' value=<%= @san_pham.id %>></br>
+    <input type="hidden" name='comment[commentable_type]' value=<%= @san_pham.class.name%>>
+   <span class="field">
+  <%= f.label :nguoi_dung_id %>
+  <%= select(:comment, :nguoi_dung_id, options_from_collection_for_select(NguoiDung.all, :id, :email)) %>
+  </span>
+    <%= f.submit %>
+  </div>
+<%end%>
+ </div>
+</div> 
+</div>
+   
+<%= link_to 'Edit', edit_san_pham_path(@san_pham) %> |
+<%= link_to 'Back', san_phams_path %>

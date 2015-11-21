@@ -1,0 +1,7 @@
+en:
+  views:
+    shared:
+      _revisit_modal:
+        explanation: If you have checked both "Wish to go" and "Been there", the "Going again" will automatically be implied and will be selected for you.
+        close_btn: Close
+        display_check: It does not display subsequent

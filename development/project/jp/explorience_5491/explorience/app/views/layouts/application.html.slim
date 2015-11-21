@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+html
+  head
+    title
+      = title
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+    = render partial: "layouts/meta_tags", locals: {title: title}
+    = favicon_link_tag 'favicon/apple-touch-icon-precomposed.ico'
+    = favicon_link_tag 'favicon/apple-touch-icon-precomposed.ico', rel: 'apple-touch-icon-precomposed', type: 'image/icon'
+    = render partial: 'layouts/application_universal_analytics'
+  body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          - if user_signed_in? && current_user.user_type?
+            = render 'layouts/curator_nav'
+          - else
+            .menu-block
+              a href="#menu"
+                = image_tag 'header/menu.svg'
+            .logo-block
+              = link_to root_path do
+                = image_tag 'header/logo_beta.svg'
+            .icon-block
+              a href="javascript:void(0);" data-toggle="popover" data-html="true" data-placement="bottom" data-title="" data-content="#{sorting_component(@sort_path, @sort_type)}"
+                = image_tag 'header/foot.svg'
+    - if user_signed_in? && current_user.user_type?
+      .curator_wrapper
+        .container
+          .row
+            .aside.col-md-3
+              = render partial: "layouts/curator_left_side"
+            .col-md-9
+              = yield
+    - else
+      .container
+          = yield
+          = render partial: "layouts/menu"
+
+    - unless user_signed_in?
+      - if @unauthenticated
+        = render "shared/authentication_error_modal"
+      - else
+        = render "shared/login_modal"

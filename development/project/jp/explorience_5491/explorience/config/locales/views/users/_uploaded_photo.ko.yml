@@ -1,0 +1,9 @@
+ko:
+  views:
+    users:
+      _uploaded_photo:
+        unpublished:
+          title: 비 게재
+          description:
+            - 이 이미지는 비 게재 중입니다.
+            - 게재하려면 이미지를 눌러 게재 버튼을 클릭하십시오.

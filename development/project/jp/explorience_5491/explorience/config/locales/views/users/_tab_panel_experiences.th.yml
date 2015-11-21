@@ -1,0 +1,10 @@
+th:
+  views:
+    users:
+      _tab_panel_experiences:
+        btn:
+          go: ฉันอยากไป
+          went: รับมี
+          revisit: ฉันต้องการที่จะเยี่ยมชมอีกครั้ง
+        experience:
+          no_contents: ไม่มีประสบการณ์บังคับคือ

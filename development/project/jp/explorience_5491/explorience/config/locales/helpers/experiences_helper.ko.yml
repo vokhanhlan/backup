@@ -1,0 +1,4 @@
+ko:
+  helpers:
+    experiences_helper:
+      fixed_period: '%{start} ~ %{end}'

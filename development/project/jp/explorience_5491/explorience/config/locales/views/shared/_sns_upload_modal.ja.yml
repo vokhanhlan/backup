@@ -1,0 +1,6 @@
+ja:
+  views:
+    shared:
+      _sns_upload_modal:
+        explanation: Twitterに画像をシェアしますか？
+        upload_btn: Twitterにシェア

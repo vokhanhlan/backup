@@ -1,0 +1,17 @@
+.modal.fade id="cancelCheckGo#{experience.id}" aria-hidden="true"
+  .modal-dialog
+    .modal-header
+      a.close data-dismiss="modal"
+        i.eicon-cancel
+    .modal-body
+      .modal-body__title
+        = t 'views.shared._check_go_modal.title'
+      p.modal-body__contents
+        = t 'views.shared._check_go_modal.cancel_confirmation'
+      / TODO HACK: 余分なSQLを減らすように。
+      - if current_user && experience.rankings.exists?(user_id: current_user.id)
+        p.modal-body__contents
+          = t 'views.shared._check_go_modal.caution'
+    .modal-footer
+      div class='btn btn-default btn--cancel' data-url="#{click_cancel_path}" data-experience_id="#{experience.id}" data-context='go'
+        = t 'views.shared._check_go_modal.cancel_btn'

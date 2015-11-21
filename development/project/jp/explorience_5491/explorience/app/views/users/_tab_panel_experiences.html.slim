@@ -1,0 +1,26 @@
+/ OPTIMIZE: yml文言の移動
+.btn-block
+  = render partial: 'users/clicking_count_panel',
+    locals: { context_filter: context_filter,
+              btn_path: btn_path,
+              clicked_count_go: clicked_count_go,
+              clicked_count_went: clicked_count_went,
+              clicked_count_revisit: clicked_count_revisit }
+.experience-contents
+  / TODO: helper化
+  - use_sortable = (context_filter == 'go' && user == current_user)? 'sortable-contents' : ''
+  #experienceContents class="#{use_sortable}" data-url="#{replace_rank_path}"
+    - if checked_experiences.empty?
+      .contents-none
+        = t 'views.users._tab_panel_experiences.experience.no_contents'
+    - if use_sortable.present?
+      = render partial: "experiences/mini_panel_experience", collection: experience_ranking,
+        locals: { user_id: user.id }
+    - else
+      = render partial: "experiences/checked_experience", collection: checked_experiences,
+        locals: { context_filter: context_filter, user: user }
+#experiences.paginate
+  - if use_sortable.present?
+    = paginate experience_ranking
+  - else
+    = paginate checked_experiences

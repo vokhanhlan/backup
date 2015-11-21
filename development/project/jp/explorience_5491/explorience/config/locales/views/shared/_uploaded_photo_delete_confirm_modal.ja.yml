@@ -1,0 +1,7 @@
+ja:
+  views:
+    shared:
+      _uploaded_photo_delete_confirm:
+        title: 本当に削除しますか？
+        delete: はい
+        back: いいえ

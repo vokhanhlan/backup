@@ -1,0 +1,6 @@
+section
+  = link_to "#detailContent#{guide.section}", data: { parent: "#accordion", toggle: "collapse" }, class: "guide-preface collapsed" do
+    = guide.title
+    i.eicon-open-down.switch
+  .guide-answer.panel-collapse.collapse id="detailContent#{guide.section}"
+    = simple_format(guide.body)

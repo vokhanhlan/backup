@@ -1,0 +1,18 @@
+.badge-block
+  div class="badge-block__content badge-#{color}"
+    .badge-count
+      = badges.flatten.count
+    ul
+      li
+        i.eicon-badge
+      li
+        = color.upcase
+  .badge-block__tags
+    - badges.each do |names|
+      .badge-block__tags-content
+        - names.each do |name|
+          .tag
+            .tag-content
+              = link_to tag_filter_path(tag: name, to: root_path) do
+                .tag-box
+                  = name

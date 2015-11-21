@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ten: MyString
+  ,: MyString
+  ma_loai_cha: 1
+
+two:
+  ten: MyString
+  ,: MyString
+  ma_loai_cha: 1

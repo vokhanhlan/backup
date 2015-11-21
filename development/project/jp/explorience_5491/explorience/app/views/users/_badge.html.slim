@@ -1,0 +1,13 @@
+.btn-block
+  = render partial: 'users/clicking_count_panel',
+    locals: { context_filter: context_filter,
+              btn_path: "#{btn_path}#tabPanelBadge",
+              clicked_count_go: clicked_count_go,
+              clicked_count_went: clicked_count_went,
+              clicked_count_revisit: clicked_count_revisit }
+
+.badges
+  = render partial: 'users/badge_detail', locals: { badges: gold_badges, color: "gold" }
+  = render partial: 'users/badge_detail', locals: { badges: silver_badges, color: "silver" }
+  = render partial: 'users/badge_detail', locals: { badges: bronze_badges, color: "bronze" }
+

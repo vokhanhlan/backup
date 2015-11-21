@@ -1,0 +1,6 @@
+th:
+  views:
+    errors:
+      error_404:
+        header: 404 ไม่พบไฟล์
+        body: หน้าคุณกำลังมองหาไม่พบ

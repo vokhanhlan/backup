@@ -1,0 +1,30 @@
+#guide
+  .guide-block
+    .guide-block__head-title
+      = t 'views.guides.caption.title'
+    .guide-block__head-content
+      - link = link_to t('views.guides.caption.inquiry_link'), "#"
+      = t("views.guides.caption.content_html", link: link)
+
+  .guide-block id="#accordion"
+    .guide-block__preface
+      = t 'views.guides.question.title'
+    .guide-block__content
+      = render partial: 'guide', collection: @guides
+
+  .guide-block
+    .guide-block__preface
+      = t 'views.guides.terms_and_policy.title'
+    .guide-block__content
+      section
+        = link_to "#", class: "guide-preface" do
+          = t 'views.guides.terms_and_policy.terms'
+          i.eicon-open-right
+      section
+        = link_to "#", class: "guide-preface" do
+          = t 'views.guides.terms_and_policy.copyright'
+          i.eicon-open-right
+      section
+        = link_to privacy_policy_path, class: "guide-preface" do
+          = t 'views.guides.terms_and_policy.privacy_policy'
+          i.eicon-open-right

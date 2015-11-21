@@ -1,0 +1,13 @@
+<% @posts_tag = Post.includes(:tags).tag_counts_on(:tags) %>
+<div class="well">
+    <h4>CATEGORIES</h4>
+    <hr/>
+    <% if  @posts_tag %>
+      <div id="tag_cloud">
+        <% tag_cloud @posts_tag, %w[s m l] do |tag, css_class| %>
+          <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+        <% end %>
+      </div>
+      <!-- /.row -->
+    <% end %>
+</div>

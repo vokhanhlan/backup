@@ -1,0 +1,4 @@
+en:
+  controllers:
+    follows_controller:
+      follow_error: You cannot post a follow.

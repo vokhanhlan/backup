@@ -1,0 +1,14 @@
+div id="uploadedPhotoDeleteConfirmModal#{photo_id}" class="modal fade" aria-hidden="true"
+  .modal-dialog
+    .modal-header
+      a.close data-dismiss="modal"
+        i.eicon-cancel
+    .modal-body
+      .modal-body__title
+        = t 'views.shared._uploaded_photo_delete_confirm.title'
+    .modal-footer
+      #uploadedPhotoDeleteBtn.btn.btn-default data-url="#{photo_delete_path}" data-photo_id="#{photo_id}" data-user_id="#{@user.id}"
+        = t 'views.shared._uploaded_photo_delete_confirm.delete'
+      div
+        .btn.btn-default data-dismiss="modal"
+          = t 'views.shared._uploaded_photo_delete_confirm.back'

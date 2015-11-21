@@ -1,0 +1,8 @@
+ja:
+  controllers:
+    curation_controller:
+      creating_experience: 体験作成
+      list_experience: 体験一覧
+      users:
+        login: ログイン
+        logout: ログアウト

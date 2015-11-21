@@ -1,0 +1,7 @@
+en:
+  views:
+    shared:
+      _uploaded_photo_delete_confirm:
+        title: Are you sure?
+        delete: "Yes"
+        back: "No"

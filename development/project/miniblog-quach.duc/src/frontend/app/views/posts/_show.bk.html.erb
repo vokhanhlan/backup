@@ -1,0 +1,36 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+        <span aria-hidden="true">×</span>
+      </button>
+      <h4 class="modal-title" id="myModalLabel">Post 's info</h4>
+    </div>
+    <div class="modal-body">
+      <div id="modal_body">
+        <div>
+          <label>Title:</label>&nbsp;<%= @post.title %>
+        </div>
+        <br/>
+        <div>
+          <label>Description:</label>&nbsp;<%= @post.description %>
+        </div>
+        <br/>
+        <div>
+          <label>Content:</label>&nbsp;<%= raw(@post.content) %>
+        </div>
+        <br/>
+        <div>
+          <label>Thumbnail:</label>&nbsp;<%= @post.thumbnail %>
+        </div>
+        <br/>
+        <div>
+          <label>Status:</label>&nbsp;<%= @post.status %>
+        </div>
+        <br/>
+        <div class="actions">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

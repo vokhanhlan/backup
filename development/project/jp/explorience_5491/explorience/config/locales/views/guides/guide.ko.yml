@@ -1,0 +1,14 @@
+ko:
+  views:
+    guides:
+      caption:
+        title: 도움말 센터
+        inquiry_link: 여기
+        content_html: '자주 묻는 질문입니다. Explorience에 대한 자세한 정보를 원하는 지원이 필요한 경우에는 %{link}로 문의하시기 바랍니다.'
+      question:
+        title: 자주 묻는 질문
+      terms_and_policy:
+        title: 약관 및 정책
+        terms: 서비스 이용 약관
+        copyright: 저작권 약관
+        privacy_policy: 개인 정보 보호 정책

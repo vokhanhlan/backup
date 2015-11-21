@@ -1,0 +1,19 @@
+- photo_id = uploaded_photo.id
+- experience_id = uploaded_photo.experiences.first.id
+.uploaded-photo.infinite-uploaded-photo
+  div id="unPublished#{photo_id}"
+    = render partial: 'users/unpublish', locals: { uploaded_photo: uploaded_photo }
+  .uploaded-photo__img data-photo_id="#{photo_id}" data-experience_id="#{experience_id}" class="#{published_state(uploaded_photo)}"
+    = image_tag(uploaded_photo.img(:normal), :"data-hidpi-src" => uploaded_photo.img(:"normal@2x"))
+  .uploaded-photo__experience-title
+    = link_to uploaded_photo.experiences.first.title, experience_title_path(uploaded_photo.experiences.first)
+  .uploaded-photo__fixed-count
+    = FixedPhoto.where(photo_id: photo_id).count
+
+// infinitescrollが走ったとき、モーダルのpartialも呼ばれないので.infinite-uploaded-photoの階層下に配置
+// FIXME: infinite-uploaded-photoの階層下にまとめて配置
+- if @user == current_user
+  .infinite-uploaded-photo id="uploadedPhotoControl#{photo_id}"
+    = render partial: 'shared/uploaded_photo_control_modal', locals: { photo_id: photo_id }
+  .infinite-uploaded-photo id="uploadedPhotoDeleteConfirm#{photo_id}"
+    = render partial: 'shared/uploaded_photo_delete_confirm',  locals: { photo_id: photo_id }

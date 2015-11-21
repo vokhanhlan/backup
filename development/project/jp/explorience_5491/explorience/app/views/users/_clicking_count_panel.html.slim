@@ -1,0 +1,27 @@
+/ TODO HACK: 同様処理があるので、partial化
+- add_class = add_context_btn_class(:go, context_filter)
+= button_to btn_path, params: { context_filter: :go }, method: :get,
+  class: "btn btn-default btn-go #{add_class}" do
+  .btn-block__count
+    = clicked_count_go
+  .btn-block__title
+    i.eicon-heart
+    = t "views.users._tab_panel_experiences.btn.go"
+/ TODO HACK: 同様処理があるので、partial化
+- add_class = add_context_btn_class(:went, context_filter)
+= button_to btn_path, params: { context_filter: :went }, method: :get,
+  class: "btn btn-default btn-went #{add_class}" do
+  .btn-block__count
+    = clicked_count_went
+  .btn-block__title
+    i.eicon-foot
+    = t "views.users._tab_panel_experiences.btn.went"
+/ TODO HACK: 同様処理があるので、partial化
+- add_class = add_context_btn_class(:revisit, context_filter)
+= button_to btn_path, params: { context_filter: :revisit }, method: :get,
+  class: "btn btn-default btn-revisit #{add_class}" do
+  .btn-block__count
+    = clicked_count_revisit
+  .btn-block__title
+    i.eicon-badge
+    = t "views.users._tab_panel_experiences.btn.revisit"

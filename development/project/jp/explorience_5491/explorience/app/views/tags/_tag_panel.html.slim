@@ -1,0 +1,29 @@
+- unless tags.empty?
+  .tag-list
+    = render partial: "tags/tag", collection: tags
+
+- if user_signed_in?
+  .tag_list
+    - selected_go   = @context_filter == "go" ? "tag-content__selected" : ""
+    - selected_went = @context_filter == "went" ? "tag-content__selected" : ""
+    - selected_revisit = @context_filter == "revisit" ? "tag-content__selected" : ""
+    .tag.clicking-tag
+      div class="tag-content #{selected_go}"
+        = link_to link_to_context_filter(@context_filter, 'go') do
+          .tag-box
+            = t "views.tags._tag_panel.go"
+    .tag.clicking-tag
+      div class="tag-content #{selected_went}"
+        = link_to link_to_context_filter(@context_filter, 'went') do
+          .tag-box
+            = t "views.tags._tag_panel.went"
+    .tag.clicking-tag
+      div class="tag-content #{selected_revisit}"
+        = link_to link_to_context_filter(@context_filter, 'revisit') do
+          .tag-box
+            = t "views.tags._tag_panel.revisit"
+.tag-list
+  .tag-list__content
+    = render partial: 'tags/tag_list', collection: pref_tags
+  .tag-list__content
+    = render partial: 'tags/tag_list', collection: genre_tags

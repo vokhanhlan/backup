@@ -1,0 +1,6 @@
+ko:
+  views:
+    shared:
+      _upload_modal:
+        photo_upload_message: 사진을 게시하여 경험을 공유합시다.
+        submit: 게시물을

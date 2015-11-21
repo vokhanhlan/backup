@@ -1,0 +1,7 @@
+th:
+  views:
+    shared:
+      _report_completed_modal:
+        title: ภาพการละเมิดรายงาน
+        completed: รายงานการละเมิดของภาพเสร็จสมบูรณ์
+        close: ปิด

@@ -1,0 +1,14 @@
+ko:
+  views:
+    users:
+      _user_layout:
+        upload_photo: 게시 사진
+        follow: 팔로우
+        follower: 팔로워
+        score: 점수
+        tag:
+          title: 인기 태그
+        tabs:
+          experiences: 랭킹
+          badge: 배지
+          photos: '포토 (%{count})'

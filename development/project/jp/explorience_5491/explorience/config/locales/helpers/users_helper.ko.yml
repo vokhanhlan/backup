@@ -1,0 +1,5 @@
+ko:
+  helpers:
+    users_helper:
+      published: 게재한다
+      unpublished: 비 게재하는

@@ -1,0 +1,23 @@
+en:
+  views:
+    users:
+      _user_layout:
+        upload_photo: Posted photos
+        follow: Follow
+        follower: Follower
+        score: Score
+        tag:
+          title: Hotspots
+        tabs:
+          experiences: Ranking
+          badge: Badge
+          photos: Photos (%{count})
+      signup:
+        title: Register
+        email: Email
+        name: Name
+        submit: Register
+        limit: characters minimum
+        password: Password
+        password_confirmation: Password confirmation
+        link_login: Log in

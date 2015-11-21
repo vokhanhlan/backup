@@ -1,0 +1,10 @@
+ja:
+  views:
+    users:
+      _tab_panel_experiences:
+        btn:
+          went: 行った
+          go: 行きたい
+          revisit: 再訪したい
+        experience:
+          no_contents: 該当する体験はありません

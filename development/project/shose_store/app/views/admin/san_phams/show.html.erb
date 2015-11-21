@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ma loai san pham:</strong>
+  <%= @san_pham.ma_loai_san_pham %>
+</p>
+
+<p>
+  <strong>Ma nha cung cap:</strong>
+  <%= @san_pham.ma_nha_cung_cap %>
+</p>
+
+<p>
+  <strong>Ten:</strong>
+  <%= @san_pham.ten %>
+</p>
+
+<p>
+  <strong>Don gia:</strong>
+  <%= @san_pham.don_gia %>
+</p>
+
+<p>
+  <strong>Mo ta:</strong>
+  <%= @san_pham.mo_ta %>
+</p>
+
+<p>
+  <strong>San pham moi:</strong>
+  <%= @san_pham.san_pham_moi %>
+</p>
+
+<p>
+  <strong>Trang thai:</strong>
+  <%= @san_pham.trang_thai %>
+</p>
+
+<p>
+  <strong>Ngay san xuat:</strong>
+  <%= @san_pham.ngay_san_xuat %>
+</p>
+<%= link_to 'Edit', edit_admin_san_pham_path(@san_pham) %> |
+<%= link_to 'Back', admin_san_phams_path %>

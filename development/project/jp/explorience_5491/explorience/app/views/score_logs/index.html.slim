@@ -1,0 +1,15 @@
+/ TODO: ワイヤーフレームだとユーザー写真、名前などがあるのでマイページにあるユーザー表示部分をpartial化する必要あり。
+.score-logs-wrap
+  .score-logs__title
+    h1
+      = t 'views.score_logs.index.title'
+  .score-logs__content
+    / TODO HACK: render collectionで同様のことができればリファクタリング
+    - rendered_date = nil
+    - @score_logs.each do |score_log|
+      - date = score_log.created_at.to_date
+      - unless date == rendered_date
+        - rendered_date = date
+        .score-logs__content__date
+          = date.strftime('%Y/%m/%d')
+      = render partial: 'score_logs/score_log', locals: { score_log: score_log }

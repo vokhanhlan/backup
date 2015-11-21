@@ -1,0 +1,6 @@
+en:
+  views:
+    follows:
+      follower_list:
+        none_list: Followers does not have.
+        

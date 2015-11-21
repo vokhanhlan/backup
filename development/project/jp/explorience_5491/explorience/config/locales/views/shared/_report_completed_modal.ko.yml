@@ -1,0 +1,7 @@
+ko:
+  views:
+    shared:
+      _report_completed_modal:
+        title: 위반 사진을보고
+        completed: 위반 이미지의보고가 완료되었습니다
+        close: 닫기

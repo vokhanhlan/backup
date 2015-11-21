@@ -1,0 +1,53 @@
+.infinite-content.content-wrap
+  .experience-photo-block
+    div
+      - main_img = render partial: "experiences/main_photo", locals:{main_photo: main_photo(experience), upload_user_img: nil, fixed_photo_count: nil}
+      - if @user == current_user && context_filter == 'went'
+        .upload-modal-block data-experience_id="#{experience.id}"
+          = main_img
+      - else
+        = link_to main_img, experience_title_path(experience)
+  .experience-title-block
+    div
+      = experience.title
+  .content-wrap__main-block
+    .btn-block
+      / TODO: リファクタリング対象
+      - click_btn_go   = "btn-block__btn-go"
+      - click_btn_went = "btn-block__btn-went"
+      - if current_user
+        - clickings_go   = experience.clickings_find_by_user("go", current_user.id)
+        - clickings_went = experience.clickings_find_by_user("went", current_user.id)
+        - click_btn_go   = clickings_go.empty?   ? "btn-block__btn-go" : "btn-block__btn-go--checked"
+        - click_btn_went = clickings_went.empty? ? "btn-block__btn-went" : "btn-block__btn-went--checked"
+      .btn-block__btn id="btnGo#{experience.id}"
+        = render partial: 'clickings/button_go',
+                 locals: {experience: experience, click_btn_go: click_btn_go}
+      .btn-block__btn id="btnWent#{experience.id}"
+        = render partial: 'clickings/button_went',
+                 locals: {experience: experience, click_btn_went: click_btn_went}
+    / NOTE: IE11で横スクロールバーを隠すためtag-blockで囲む
+    .tag-block data-experience="#{experience.id}"
+      / TODO: revisitsは再訪カウントを取得しているので、後日変数名を変更（revisit_counts）
+      - revisits = experience.click_count(:revisit)
+      - scroll_width_transform = revisits > 0 ? "transform-tag-scroll-width" : ""
+      - if revisits > 0
+        #revisitBadge.tag-block__icon
+          - specified = current_user_wish_going_again?(experience.id)
+          = render partial: 'shared/revisit_badge', locals:{ revisits: revisits, specified: specified }
+      .tag-block__scroll class="#{scroll_width_transform}"
+        - experience.tags_least_used.each do |tag|
+          .tag
+            .tag-content
+              = link_to tag_filter_path(tag: tag.name, to: root_path) do
+                .tag-box
+                  = tag.name
+  = render partial: 'shared/check_go_modal',   locals: {experience: experience}
+  = render partial: 'shared/check_went_modal', locals: {experience: experience}
+  = render partial: 'shared/revisit_modal'
+  = render partial: 'shared/upload_modal', locals: {experience: experience}
+- if user_signed_in?
+  / TODO: モーダルの表示方法が変更になったらこの条件は変わる。
+  / 現状は、twitterシェアに対応したので下記の分岐になる。
+  - if current_user.providers && current_user.providers.first && current_user.providers.first.twitter?
+    = render partial: 'shared/sns_upload_modal', locals: {experience: @experience, photo_id: flash[:upload_completed]} if flash[:upload_completed]

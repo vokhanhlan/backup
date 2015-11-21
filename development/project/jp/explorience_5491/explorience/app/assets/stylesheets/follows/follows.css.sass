@@ -1,0 +1,43 @@
+@import "shared/variables"
+@import "shared/mixin"
+
+.followed
+  background-color: $active_color
+  color: $user_info_font_color
+
+.follow-list-wrap
+  // TODO: HACK: 高さ指定をしなくてもログインモーダルが表示できるように修正
+  // フォロー・フォロワーリストがないの、高さ設定
+  // この指定をしないと、ログインモーダルが見切れて全部表示されなくなる
+  min-height: 430px
+  .table
+    +pc_only
+      width: 80%
+      margin-right: auto
+      margin-left: auto
+    td
+      vertical-align: middle!important
+  .user-icon
+    width: 50px
+    height: auto
+    border-top: none
+    border-bottom: none
+    img
+      width: 50px
+      height: 50px
+      +border-radius(50%)
+  .follow-btn
+    text-align: right
+  .follow-list--none
+    text-align: center
+    margin-top: 30px
+  .user-name
+    .user-name__unread
+      width: 10px
+      height: 10px
+      background-color: red
+      +border-radius(50%)
+      +inline-block
+      margin-right: 5px
+    .user-name__content
+      +inline-block

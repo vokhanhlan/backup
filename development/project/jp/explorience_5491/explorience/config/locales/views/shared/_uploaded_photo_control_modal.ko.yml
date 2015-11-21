@@ -1,0 +1,6 @@
+ko:
+  views:
+    shared:
+      _uploaded_photo_control:
+        title: 이미지 설정
+        delete: 삭제하기

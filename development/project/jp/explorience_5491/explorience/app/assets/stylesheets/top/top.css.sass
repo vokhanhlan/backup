@@ -1,0 +1,184 @@
+// Place all the styles related to the tops controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "shared/mixin"
+@import "shared/variables"
+
+#infscr-loading
+  text-align: center
+  margin-top: 10px
+  img
+    width: 48px
+    height: 48px
+
+// コンテンツ
+
+// 絞り込み用タグ一覧表示エリア
+.tag-list
+  width: 100%
+  overflow-x: scroll
+  overflow-y: hidden
+  white-space: nowrap
+  margin-bottom: 0
+  display: block
+  button
+    border: none
+    background: none
+
+// タグ絞り込み表示エリア
+.filtering-tag-box
+  // 共通部品のpadding無効化(tag部品にmargin-bottom付いているため）
+  padding-bottom: 0px
+
+// 該当コンテンツ無い場合のメッセージ
+.contents-none
+  margin-top: 10%
+  text-align: center
+  font-size: 11px
+
+// 体験コンテンツ
+.content-wrap
+  margin: 0 auto
+  margin-top: $default_content_margin
+  background-color: $box_bg_color
+  vertical-align: top
+  width: 49%
+  &:nth-of-type(odd)
+    margin-right: $default_content_margin
+  +other_phone //スマホ以外
+    border: solid 1px $box_border_color
+    border-radius: $border_radius
+    +inline-block
+  +pc_width_narrow //PCで画面を狭めた時
+    width: 100%
+    margin-top: $content_margin
+  +phone
+    width: 100%
+    margin-top: $content_margin * 2
+    border-bottom: solid 2px $box_border_color
+  +phone_landscape
+    margin-top: $content_margin
+  .content-wrap__main-block
+    margin-top: -30px
+    padding-bottom: 12px
+    .title-block
+      display: inline-block
+      width: 100%
+      .title-block__box
+        display: inline-block
+        width: 90%
+        vertical-align: middle
+      .icon_block
+        vertical-align: middle
+      .icon_block, .title_block
+        display: inline-block
+    .btn-block
+      padding: 12px
+      .btn-block__btn
+        width: 49%
+        height: auto
+        display: inline-block
+        &:nth-of-type(odd)
+          margin-right: $btn_margin
+    .tag-block
+      width: 100%
+      height: 30px
+      overflow: hidden
+      margin-bottom: 10px
+      padding-left: 12px
+      +box-sizing(border-box)
+      .tag-block__icon
+        width: auto
+        +inline-block
+        vertical-align: top
+      .tag-block__scroll
+        width: 100%
+        height: auto
+        overflow-x: scroll
+        white-space: nowrap
+        +inline-block
+      .transform-tag-scroll-width // 要リファクタ
+        width: 87%
+        +phone_portrait
+          width: 75%
+        +phablet_and_tablet
+          width: 80%
+        +iphone_6_portrait
+          width: 80%
+        +iphone_6_landscape
+          width: 89%
+
+// 再訪アイコン
+// TODO: 緊急対応のため、暫定的にIDにstyle付けてます。要リファクタ。
+.title-block #revisitBadge
+  +inline-block
+.icon-revisit
+  +inline-block
+  cursor: pointer
+  margin-right: 12px
+  background-color: $icon_inactive_color
+  +border-radius()
+  padding: 2px 6px
+  vertical-align: top
+  .icon-revisit__icon, .icon-revisit__count
+    +inline-block
+  .eicon-badge
+    font-size: 18px
+    color: $box_bg_color
+    &:before
+      vertical-align: text-bottom
+  .icon-revisit__count--box,.icon-revisit__count--arrow
+    +inline-block
+    color: $icon_inactive_color
+  .icon-revisit__count--box
+    border: solid 1px $box_bg_color
+    background-color: $box_bg_color
+    padding: 0 5px
+    +border-radius($border_radius)
+  .icon-revisit__count--arrow
+    border: 5px solid transparent
+    border-right-width: 8px
+    border-right-color: $box_bg_color
+    border-left-width: 0
+    width: 0
+// 再訪アイコン（current_userが再訪選択時）
+.icon-revisit.colored
+  background-color: $icon_active_color
+  .icon-revisit__count--box,.icon-revisit__count--arrow
+    color: $icon_active_color
+
+//体験詳細・マイページなどで使う体験表示
+.side-exp-content-block
+  border-top: 1px solid #666666
+  .side-exp-wrap
+    width: 100%
+    height: auto
+    border-bottom: 1px solid #666666
+    .side-exp-wrap__img
+      width: 50%
+      height: auto
+      +inline-block
+      img
+        width: 100%
+        height: auto
+        margin: 5px
+    .side-exp-wrap__content
+      width: 50%
+      height: auto
+      +inline-block
+      .side-exp__title, .side-exp__count
+        width: 100%
+        height: auto
+        padding: 10px
+        text-align: center
+        a
+          text-decoration: none
+          &:hover
+            font-weight: bold
+      .side-exp__count--go, .side-exp__count--revisit
+        width: 50%
+        height: auto
+        +inline-block
+        i
+          margin-right: 5px

@@ -1,0 +1,9 @@
+ko:
+  helpers:
+    score_logs_helper:
+      login: 로그인 보너스를했습니다.
+      clicking: 체험 체크 보너스를했습니다.
+      photo: 사진 게시물 보너스를했습니다.
+      follows:
+        follower_html: '%{name} 씨에서 팔로우되었습니다.'
+        following_html: '%{name} 님을 팔로우했습니다.'

@@ -1,0 +1,108 @@
+.user-wrap
+  .user-info
+    .user-info__contents
+      .user-block
+        .user-block__photo
+          = image_tag user_img
+        .user-name-sns-block
+          .user-name-sns-block__name
+            = user_name
+          .user-name-sns-block__sns
+            / TODO: レイアウトが確定後、アイコン、位置修正
+            - user.providers.each do |provider|
+              div class="sns-link-block--#{provider.sns_type}"
+                = link_to user_sns_link(provider,user_name),
+                  target: "_blank",
+                  data: { url: action_log_increase_path,
+                          column: "refered_other_users_sns" } do
+                  - if provider.sns_type == "facebook"
+                    = image_tag 'sns_icon/Facebook.svg', size: '20x20'
+                  - elsif provider.sns_type == "twitter"
+                    = image_tag 'sns_icon/Twitter.svg', size: '20x20'
+                  - else
+                    = image_tag 'sns_icon/Google+.svg', size: '20x20'
+      .user-btn-block
+        = link_to following_list_path(user_id: user.id), class: "follow-block" do
+          .follow-block__count
+            = following_count
+          .follow-block__title
+            = t "views.users._user_layout.follow"
+        = link_to follower_list_path(user_id: user.id), class: "follower-block" do
+          .follower-block__count
+            = render partial: 'follows/follower_count', locals: {follower_count: follower_count}
+          .follower-block__title
+            = t "views.users._user_layout.follower"
+            - if unread_followers.present?
+              .follower-block__unread
+                = unread_count(unread_followers.count)
+        / TODO: 多言語対応版リリースに向け、一時的にスコア表示部分をマスク。
+        // FIXME: スコア履歴が無い場合、リンク表示すべきかどうか最終的なモックで確認すること
+        /- if current_user == user && current_user.try(:score_logs).present?
+          = link_to score_log_path, class: "score-block" do
+            .score-block__count
+              = user.score
+            .score-block__title
+              = t "views.users._user_layout.score"
+              - if unread_score_logs.present?
+                .score-block__unread
+                  = unread_count(unread_score_logs.count)
+        /- else
+          .score-block
+            .score-block__count
+              = user.score
+            .score-block__title
+              = t "views.users._user_layout.score"
+    .user-info__background
+      - photo = main_photo(@experience_ranking.first, user)
+      - unless photo.new_record?
+        = image_tag(photo.img(:normal), :"data-hidpi-src" => photo.img(:"normal@2x"))
+  - if user_signed_in? && current_user != user
+    .follow-btn-block
+      = render partial: "follows/follow_btn", locals: { following_id: user.id, follow_btn_class: follow_btn_class(user) }
+  / FIXME: tagの絞り込み情報をmypageとmypage以外で分けた上で、下記処理の表示対応を行う
+  / TODO: ver2.0リリースに向け、一時的に機能マスク
+  /- unless tags.empty?
+    .search-tag--border-radius.filtering-tag-box
+      = render partial: "tags/tag", collection: tags
+  .tabbable
+    ul.nav.nav-tabs
+      li.active
+        a href="#tabPanelExperiences" data-toggle='tab'
+          = t "views.users._user_layout.tabs.experiences"
+      li
+        a href="#tabPanelBadge" data-toggle='tab'
+          = t "views.users._user_layout.tabs.badge"
+      li
+        a href="#tabPanelPhotos" data-toggle='tab'
+          / 投稿画像削除でのajax処理中にcountを変更するため、views/photos/destroy.js.coffeeで同じyamlのキーを参照しています
+          = t "views.users._user_layout.tabs.photos", count: uploaded_photos_count
+    .tab-content
+      #tabPanelExperiences.tab-pane.active
+        = render partial: 'users/tab_panel_experiences',
+          locals: { context_filter: context_filter,
+                    btn_path: btn_path,
+                    clicked_count_go: clicked_count_go,
+                    clicked_count_went: clicked_count_went,
+                    clicked_count_revisit: clicked_count_revisit,
+                    user: user,
+                    checked_experiences: checked_experiences,
+                    experience_ranking: experience_ranking}
+      #tabPanelBadge.tab-pane
+        = render partial: 'users/badge',
+          locals: { context_filter: context_filter,
+                    btn_path: btn_path,
+                    checked_experiences: checked_experiences,
+                    clicked_count_go: clicked_count_go,
+                    clicked_count_went: clicked_count_went,
+                    clicked_count_revisit: clicked_count_revisit,
+                    gold_badges: @gold_badges,
+                    silver_badges: @silver_badges,
+                    bronze_badges: @bronze_badges }
+      #tabPanelPhotos.tab-pane
+        = render partial: "users/uploaded_photo", collection: uploaded_experience_photos
+      #photos.paginate
+        = paginate uploaded_experience_photos, :param_name => 'photos_page'
+
+  = render partial: "shared/error_modal", locals: { errors: flash[:errors] } if flash[:errors]
+  = render partial: "shared/report_completed_modal" if flash[:report_completed]
+

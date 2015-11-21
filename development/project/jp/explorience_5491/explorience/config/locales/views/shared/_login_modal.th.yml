@@ -1,0 +1,10 @@
+th:
+  views:
+    shared:
+      _login_modal:
+        welcome: ยินดีต้อนรับบนเรือ!
+        explanation_html: เราดำเนินงานเว็บไซต์ที่จะแนะนำ "สำรวจ" และ "ประสบการณ์" ของวัฒนธรรมญี่ปุ่น ชื่อเว็บไซต์ <br> "Explorience"
+        btn:
+          facebook: มันจะเริ่มต้นด้วย Facebook
+          twitter: มันจะเริ่มต้นด้วย Twitter
+          google: มันจะเริ่มต้นด้วย Google

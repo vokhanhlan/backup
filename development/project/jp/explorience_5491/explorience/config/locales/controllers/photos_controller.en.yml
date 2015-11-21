@@ -1,0 +1,6 @@
+en:
+  controllers:
+    photos_controller:
+      upload_error: You cannot post a photo.
+      published_error: You are unable posted switching.
+      photo_delete: Delete photos could not be.

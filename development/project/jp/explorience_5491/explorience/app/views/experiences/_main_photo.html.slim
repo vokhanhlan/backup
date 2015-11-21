@@ -1,0 +1,12 @@
+- user_uploaded_img = upload_user_img && default_photo_id != main_photo.id 
+- if user_uploaded_img
+  .upload-user-icon
+    = image_tag upload_user_img
+  .display-img-count
+    = fixed_photo_count
+= image_tag(main_photo.img(:normal), :"data-hidpi-src" => main_photo.img(:"normal@2x"))
+- if user_uploaded_img
+  .invalid-image-report data-report-modal-id="#reportModal#{main_photo.id}"
+    i.fa.fa-ban
+
+

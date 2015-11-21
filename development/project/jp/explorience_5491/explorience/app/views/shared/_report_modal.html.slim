@@ -1,0 +1,58 @@
+div id="reportModal#{photo_id}" class="modal fade" aria-hidden="true"
+  .modal-dialog
+    .modal-header
+      a.close data-dismiss="modal"
+        i.eicon-cancel
+    .modal-body
+      .modal-body__title
+        i.fa.fa-ban
+        = t 'views.shared._report_modal.title'
+      .modal-body__contents
+        .contents__form
+          = form_for InvalidImage.new do |f|
+            = f.hidden_field :photo_id,    value: photo_id
+            = f.hidden_field :reporter_id, value: (current_user)? current_user.id : nil
+            .form__photo
+              = image_tag Photo.find(photo_id).img.url(:normal)
+            .form__guidance
+              = t 'views.shared._report_modal.guidance'
+            .form__inputs
+              .form__inputs__element
+                .form__inputs__element__description
+                  = t 'views.shared._report_modal.form.email'
+                .form__inputs__element__input-field
+                  - user_email = current_user ? current_user.valid_email : nil
+                  = text_field_tag :email, user_email, placeholder: t('views.shared._report_modal.form.email_guidance')
+              .form__inputs__element
+                .form__inputs__element__description
+                  = t 'views.shared._report_modal.form.invalid_type'
+                .form__inputs__element__input-field
+                  = select_tag :invalid_type, options_for_select(t('views.shared._report_modal.select_box_items'))
+              .form__inputs__element
+                .form__inputs__element__description
+                  = t 'views.shared._report_modal.form.reason'
+                .form__inputs__element__input-field
+                  = text_area_tag :reason
+            .form__submit
+              = f.submit t('views.shared._report_modal.btn.submit'),
+                class: "btn btn-default",
+                data: { confirm: t('views.shared._report_modal.btn.confirm') }
+
+coffee:
+  # TODO: コードを適切なjsファイルに移動
+  $ ->
+    # show report modal
+    $('.invalid-image-report').on 'click touchstart', (event) ->
+      if event.target.dataset.reportModalId
+        # when target is div
+        targetModal = event.target.dataset.reportModalId
+      else
+        # when target is WebFont
+        targetModal = event.target.parentElement.dataset.reportModalId
+      $(targetModal).modal('show')
+
+    # show report completed modal
+    completedModal = $('#reportCompleted')
+    if $(completedModal).length > 0
+      completedModal.modal('show').on "hidden.bs.modal", (event) ->
+        $(event.currentTarget).remove()

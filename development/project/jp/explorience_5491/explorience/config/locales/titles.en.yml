@@ -1,0 +1,17 @@
+en:
+  titles:
+    application: Explorience
+    top:
+      show: Top - Explorience
+      mypage: "%{user_name}'s mypage - Explorience"
+      privacy_policy: privacy policy - Explorience
+      setting: setting - Explorience
+    experiences:
+      show: '%{experience_title} - Explorience'
+    users:
+      show: "%{user_name}'s page - Explorience"
+    follows:
+      following_list: following list - Explorience
+      follower_list: follower list - Explorience
+    guides:
+      index: Guides - Explorience

@@ -1,0 +1,12 @@
+ja:
+  views:
+    experiences:
+      show:
+        btn:
+          revisit: 再訪したい
+          show_part: 閉じる
+          upload_image: 写真を投稿する 
+        uploaded_photo: 投稿された写真
+        affiliate:
+          link_btn: '%{advertiser_name}に行く'
+        show_more: もっと見る
